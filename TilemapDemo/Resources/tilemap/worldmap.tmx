@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="Exterior_Forest_TileA2" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/A2/Exterior_Forest_TileA2.png" width="512" height="384"/>
+ </tileset>
+ <tileset firstgid="193" name="Overworld_TileA2" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/A2/Overworld_TileA2.png" width="512" height="384"/>
+ </tileset>
+ <tileset firstgid="385" name="Exterior_TileA2" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/A2/Exterior_TileA2.png" width="512" height="384"/>
+ </tileset>
+ <tileset firstgid="577" name="Exterior_Forest_TileA5" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/A5/Exterior_Forest_TileA5.png" width="256" height="512"/>
+ </tileset>
+ <tileset firstgid="705" name="Overworld_TileA5" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/A5/Overworld_TileA5.png" width="256" height="512"/>
+ </tileset>
+ <tileset firstgid="833" name="Exterior_Forest_TileB" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/B/Exterior_Forest_TileB.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="1089" name="Exterior_Forest_TileC" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/C/Exterior_Forest_TileC.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="1345" name="Exterior_Walls_TileE" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/E/Exterior_Walls_TileE.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="1601" name="Exterior_TileA1" tilewidth="32" tileheight="32">
+  <image source="../DSMaterials/Graphics/Tilesets/A1/Exterior_TileA1.png" width="512" height="384"/>
+ </tileset>
+ <layer name="BackgroundLayer" width="32" height="32">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA3NiYmBwGsWjeBSP4lE8ikfxKB7Fo3gUDzhOBOIkNJxMR7tzsIjn0skNmXjkskeo/aVAXATExXSwvxBqFzKmh72jmL4YAIp5cdsAEAAA
+  </data>
+ </layer>
+</map>
