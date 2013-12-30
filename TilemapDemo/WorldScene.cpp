@@ -26,8 +26,8 @@ bool WorldScene::init()
     m_gameNode = CCNode::create();
     addChild(m_gameNode);
     
-    m_map = CCTMXTiledMap::create("tilemap/worldmap.tmx");
-    m_gameNode->addChild(m_map);
+   // m_map = CCTMXTiledMap::create("tilemap/worldmap.tmx");
+   // m_gameNode->addChild(m_map);
     
     
     return true;
