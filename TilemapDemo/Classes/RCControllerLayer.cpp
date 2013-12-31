@@ -11,6 +11,16 @@
 
 USING_NS_CC;
 
+RCControllerLayer::RCControllerLayer():m_delegate(NULL)
+{
+
+}
+
+RCControllerLayer::~RCControllerLayer()
+{
+
+}
+
 bool RCControllerLayer::init()
 {
     if (!CCLayer::init()) {
@@ -26,6 +36,22 @@ bool RCControllerLayer::init()
     return true;
 }
 
+void RCControllerLayer::onEnter()
+{
+    CCLayer::onEnter();
+    scheduleUpdate();
+}
 
+void RCControllerLayer::onExit()
+{
+    CCLayer::onExit();
+    unscheduleUpdate();
+}
 
+void RCControllerLayer::update(float delta)
+{
+    if (m_delegate) {
+        m_delegate->updateControllerVector(this, m_dPad->getPressedVector(), delta);
+    }
+}
 

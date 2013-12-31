@@ -11,14 +11,14 @@
 USING_NS_CC;
 
 RCActorTemplate::RCActorTemplate():m_actionDictionary(NULL)
-            ,m_texture(NULL)
+            ,m_actorTexture(NULL)
 {
 
 }
 
 RCActorTemplate::~RCActorTemplate()
 {
-    CC_SAFE_RELEASE(m_texture);
+    CC_SAFE_RELEASE(m_actorTexture);
 }
 
 RCActorTemplate *RCActorTemplate::createWithDict(cocos2d::CCDictionary *dict)
@@ -47,30 +47,16 @@ bool RCActorTemplate::initWithDict(cocos2d::CCDictionary *dict)
     m_actionDictionary->retain();
     
     CCString *actorName = (CCString*)dict->objectForKey("name");
-    m_name = actorName->getCString();
+    m_actorName = actorName->getCString();
     
-//    CCArray *actionArray = (CCArray*)dict->objectForKey("action_array");
-//    CCObject *object;
-//    CCARRAY_FOREACH(actionArray, object)
-//    {
-//        CCDictionary *actionDict = (CCDictionary*)object;
-//        CCString *actionName = (CCString*)actionDict->objectForKey("action_name");
-//        CCArray *frameArray = (CCArray*)actionDict->objectForKey("frame_array");
-//        
-//        CCDictionary *newActionDict = CCDictionary::create();
-//        CCArray *newFrameArray = CCArray::create();
-//        for (int i=0; i<frameArray->count(); i++) {
-//            CCDictionary *frameDict = (CCDictionary*)frameArray->objectAtIndex(i);
-//            int x = frameDict->valueForKey("x")->intValue();
-//            int y = frameDict->valueForKey("y")->intValue();
-//            int width = frameDict->valueForKey("width")->intValue();
-//            int height = frameDict->valueForKey("height")->intValue();
-//            CCRect rect = CCRectMake(x, y, width, height);
-//        
-//        }
-//    
-//    }
-    
+    CCArray *actionArray = (CCArray*)dict->objectForKey("action_array");
+    CCObject *object;
+    CCARRAY_FOREACH(actionArray, object)
+    {
+        CCDictionary *actionDict = (CCDictionary*)object;
+        CCString *actionName = (CCString*)actionDict->objectForKey("action_name");
+        m_actionDictionary->setObject(actionDict, actionName->getCString());
+    }
     
     return true;
 }

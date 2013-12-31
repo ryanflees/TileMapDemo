@@ -280,6 +280,7 @@
 		041863D4186BE4F600E01A3D /* tolua_push.c in Sources */ = {isa = PBXBuildFile; fileRef = 041862C4186BE4F500E01A3D /* tolua_push.c */; };
 		041863D5186BE4F600E01A3D /* tolua_to.c in Sources */ = {isa = PBXBuildFile; fileRef = 041862C5186BE4F500E01A3D /* tolua_to.c */; };
 		04A6BB3518717A7D0094B6F1 /* game in Resources */ = {isa = PBXBuildFile; fileRef = 04A6BB3418717A7D0094B6F1 /* game */; };
+		04B1DD181872556200F062D6 /* RCStringHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04B1DD161872556200F062D6 /* RCStringHelper.mm */; };
 		6B3849EF1866DA2000830047 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849EE1866DA2000830047 /* QuartzCore.framework */; };
 		6B3849F11866DA2000830047 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849F01866DA2000830047 /* OpenGLES.framework */; };
 		6B3849F31866DA2000830047 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849F21866DA2000830047 /* OpenAL.framework */; };
@@ -934,6 +935,8 @@
 		041862C4186BE4F500E01A3D /* tolua_push.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_push.c; sourceTree = "<group>"; };
 		041862C5186BE4F500E01A3D /* tolua_to.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_to.c; sourceTree = "<group>"; };
 		04A6BB3418717A7D0094B6F1 /* game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = game; path = Resources/game; sourceTree = "<group>"; };
+		04B1DD161872556200F062D6 /* RCStringHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RCStringHelper.mm; path = Classes/RCStringHelper.mm; sourceTree = "<group>"; };
+		04B1DD171872556200F062D6 /* RCStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCStringHelper.h; path = Classes/RCStringHelper.h; sourceTree = "<group>"; };
 		6B3849EB1866DA2000830047 /* TilemapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TilemapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B3849EE1866DA2000830047 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6B3849F01866DA2000830047 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -2313,6 +2316,8 @@
 			isa = PBXGroup;
 			children = (
 				6BBAE9141871BBC400A3B6D2 /* func.h */,
+				04B1DD161872556200F062D6 /* RCStringHelper.mm */,
+				04B1DD171872556200F062D6 /* RCStringHelper.h */,
 			);
 			name = RCHelper;
 			sourceTree = "<group>";
@@ -2610,6 +2615,7 @@
 				041862F0186BE4F500E01A3D /* CCActionPageTurn3D.cpp in Sources */,
 				0418630F186BE4F500E01A3D /* matrix.c in Sources */,
 				04186320186BE4F500E01A3D /* CCScene.cpp in Sources */,
+				04B1DD181872556200F062D6 /* RCStringHelper.mm in Sources */,
 				041863B5186BE4F500E01A3D /* BoneData.cpp in Sources */,
 				0418632F186BE4F500E01A3D /* CCFileUtils.cpp in Sources */,
 				04186300186BE4F500E01A3D /* CCGeometry.cpp in Sources */,

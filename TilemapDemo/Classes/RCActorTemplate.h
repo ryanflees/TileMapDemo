@@ -22,9 +22,9 @@ public:
     virtual bool initWithDict(cocos2d::CCDictionary *dict);
     
 private:
-    CC_SYNTHESIZE(string, m_name, Name);
-    CC_SYNTHESIZE_RETAIN(cocos2d::CCTexture2D*, m_texture, Texture);
-    cocos2d::CCDictionary *m_actionDictionary;
+    CC_SYNTHESIZE(string, m_actorName, ActorName);
+    CC_SYNTHESIZE_RETAIN(cocos2d::CCTexture2D*, m_actorTexture, ActorTexture);
+    CC_SYNTHESIZE_READONLY(cocos2d::CCDictionary*, m_actionDictionary, ActionDictionary);
 };
 
 #endif /* defined(__TilemapDemo__RCActorTemplate__) */
