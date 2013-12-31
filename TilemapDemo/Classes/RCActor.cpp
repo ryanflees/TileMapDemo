@@ -49,7 +49,7 @@ bool RCActor::initWithTemplate(RCActorTemplate *actorTemplate)
     m_texture = actorTemplate->getActorTexture();
     m_texture->retain();
     
-    m_interval = 0.3f;
+    m_interval = 0.2f;
     m_intervalTimer = 0;
     m_frameIndex = 0;
     

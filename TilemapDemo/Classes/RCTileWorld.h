@@ -11,16 +11,31 @@
 
 #include <iostream>
 #include "cocos2d.h"
+#include "RCWorldManager.h"
 
+class RCActor;
+class RCActorTemplate;
+class RCControllerLayer;
 class RCTileWorld : public cocos2d::CCLayer {
     
 public:
+    RCTileWorld();
+    ~RCTileWorld();
     virtual bool initWithTmxFile(const char* tmxFile);
     static RCTileWorld *createWithTmxFile(const char* tmxFile);
     
+    void addPlayer(RCActorTemplate* actorTemplate);
+    void removePlayer();
+    
+    void bindControllerLayer(RCControllerLayer* controllerLayer);
+    RCActor *getPlayer(){ return m_player;}
 private:
-    cocos2d::CCTMXTiledMap *m_tileMap;
+    RCWorldManager *m_worldManager;
     cocos2d::CCNode *m_gameNode;
+    
+    cocos2d::CCTMXTiledMap *m_tileMap;
+    RCActor *m_player;
+    cocos2d::CCArray *m_actorArray;
     //RCActorController* m_actorController;
 };
 

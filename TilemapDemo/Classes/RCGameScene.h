@@ -12,12 +12,11 @@
 
 #include <iostream>
 #include "cocos2d.h"
-#include "RCControllerLayer.h"
 
 class RCTileWorld;
 class RCActor;
+class RCControllerLayer;
 class RCGameScene : public cocos2d::CCLayer
-                , public RCControllerLayerDelegate
 {
     
 public:
@@ -25,14 +24,11 @@ public:
     
     virtual bool init();
     CREATE_FUNC(RCGameScene);
-    
-    void updateControllerVector(RCControllerLayer* controllerLayer, cocos2d::CCPoint pressedVector,float delta);
 private:
     RCControllerLayer *m_controllerLayer;
     RCTileWorld *m_tileWorld;
     
     RCActor *m_player;
-    int m_playerAction;
 };
 
 #endif /* defined(__TilemapDemo__RCGameScene__) */

@@ -281,6 +281,8 @@
 		041863D5186BE4F600E01A3D /* tolua_to.c in Sources */ = {isa = PBXBuildFile; fileRef = 041862C5186BE4F500E01A3D /* tolua_to.c */; };
 		04A6BB3518717A7D0094B6F1 /* game in Resources */ = {isa = PBXBuildFile; fileRef = 04A6BB3418717A7D0094B6F1 /* game */; };
 		04B1DD181872556200F062D6 /* RCStringHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04B1DD161872556200F062D6 /* RCStringHelper.mm */; };
+		04B1DD1D18726FF500F062D6 /* RCWorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04B1DD1B18726FF500F062D6 /* RCWorldManager.cpp */; };
+		04B1DD201872700A00F062D6 /* RCMiniMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04B1DD1E1872700A00F062D6 /* RCMiniMap.cpp */; };
 		6B3849EF1866DA2000830047 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849EE1866DA2000830047 /* QuartzCore.framework */; };
 		6B3849F11866DA2000830047 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849F01866DA2000830047 /* OpenGLES.framework */; };
 		6B3849F31866DA2000830047 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849F21866DA2000830047 /* OpenAL.framework */; };
@@ -937,6 +939,10 @@
 		04A6BB3418717A7D0094B6F1 /* game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = game; path = Resources/game; sourceTree = "<group>"; };
 		04B1DD161872556200F062D6 /* RCStringHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RCStringHelper.mm; path = Classes/RCStringHelper.mm; sourceTree = "<group>"; };
 		04B1DD171872556200F062D6 /* RCStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCStringHelper.h; path = Classes/RCStringHelper.h; sourceTree = "<group>"; };
+		04B1DD1B18726FF500F062D6 /* RCWorldManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCWorldManager.cpp; path = Classes/RCWorldManager.cpp; sourceTree = "<group>"; };
+		04B1DD1C18726FF500F062D6 /* RCWorldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCWorldManager.h; path = Classes/RCWorldManager.h; sourceTree = "<group>"; };
+		04B1DD1E1872700A00F062D6 /* RCMiniMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCMiniMap.cpp; path = Classes/RCMiniMap.cpp; sourceTree = "<group>"; };
+		04B1DD1F1872700A00F062D6 /* RCMiniMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCMiniMap.h; path = Classes/RCMiniMap.h; sourceTree = "<group>"; };
 		6B3849EB1866DA2000830047 /* TilemapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TilemapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B3849EE1866DA2000830047 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6B3849F01866DA2000830047 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -2273,6 +2279,8 @@
 			children = (
 				6BBAE91E1871BCC900A3B6D2 /* RCTileWorld.cpp */,
 				6BBAE91F1871BCC900A3B6D2 /* RCTileWorld.h */,
+				04B1DD1B18726FF500F062D6 /* RCWorldManager.cpp */,
+				04B1DD1C18726FF500F062D6 /* RCWorldManager.h */,
 			);
 			name = TileMap;
 			sourceTree = "<group>";
@@ -2306,6 +2314,8 @@
 			children = (
 				6BBAE90B1871BB6300A3B6D2 /* RCUILayer.cpp */,
 				6BBAE90C1871BB6300A3B6D2 /* RCUILayer.h */,
+				04B1DD1E1872700A00F062D6 /* RCMiniMap.cpp */,
+				04B1DD1F1872700A00F062D6 /* RCMiniMap.h */,
 				6BBAE90E1871BB7D00A3B6D2 /* RCControllerLayer.cpp */,
 				6BBAE90F1871BB7D00A3B6D2 /* RCControllerLayer.h */,
 			);
@@ -2333,6 +2343,13 @@
 				6BBAE91C1871BC0A00A3B6D2 /* RCActor.h */,
 			);
 			name = RCSprite;
+			sourceTree = "<group>";
+		};
+		04B1DD1A18726A9500F062D6 /* RCAudio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RCAudio;
 			sourceTree = "<group>";
 		};
 		6B3849E21866DA2000830047 = {
@@ -2433,6 +2450,7 @@
 		6B384DCF1866DA2800830047 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04B1DD1A18726A9500F062D6 /* RCAudio */,
 				04A6BB321871792C0094B6F1 /* RCSprite */,
 				04A6BB31187179220094B6F1 /* RCHelper */,
 				04A6BB2B187178B90094B6F1 /* RCScene */,
@@ -2672,6 +2690,7 @@
 				041863B0186BE4F500E01A3D /* Atlas.cpp in Sources */,
 				6BAD2E581869C96D00B382EF /* TileMapScene.cpp in Sources */,
 				04186322186BE4F500E01A3D /* CCTransitionPageTurn.cpp in Sources */,
+				04B1DD201872700A00F062D6 /* RCMiniMap.cpp in Sources */,
 				041863A2186BE4F500E01A3D /* CCEditBoxImplWin.cpp in Sources */,
 				04186326186BE4F500E01A3D /* CCClippingNode.cpp in Sources */,
 				041863BC186BE4F500E01A3D /* SkeletonData.cpp in Sources */,
@@ -2696,6 +2715,7 @@
 				0418630A186BE4F500E01A3D /* CCGrid.cpp in Sources */,
 				04186314186BE4F500E01A3D /* quaternion.c in Sources */,
 				0418639E186BE4F500E01A3D /* CCEditBoxImplIOS.mm in Sources */,
+				04B1DD1D18726FF500F062D6 /* RCWorldManager.cpp in Sources */,
 				04186307186BE4F500E01A3D /* CCDrawingPrimitives.cpp in Sources */,
 				04186355186BE4F500E01A3D /* CCComponent.cpp in Sources */,
 				041862D9186BE4F500E01A3D /* cpBBTree.c in Sources */,
