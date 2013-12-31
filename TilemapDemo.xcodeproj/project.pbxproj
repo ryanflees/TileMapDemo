@@ -315,6 +315,16 @@
 		6B384DE61866DA2800830047 /* effect1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B384DE51866DA2800830047 /* effect1.wav */; };
 		6B4BCF5C186B1DD2001C4067 /* WorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B4BCF5A186B1DD2001C4067 /* WorldScene.cpp */; };
 		6BAD2E581869C96D00B382EF /* TileMapScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD2E561869C96D00B382EF /* TileMapScene.cpp */; };
+		6BBAE9051871BB0000A3B6D2 /* dpad_buttons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAE9031871BB0000A3B6D2 /* dpad_buttons.plist */; };
+		6BBAE9061871BB0000A3B6D2 /* dpad_buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAE9041871BB0000A3B6D2 /* dpad_buttons.png */; };
+		6BBAE90A1871BB4B00A3B6D2 /* RCGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9081871BB4B00A3B6D2 /* RCGameScene.cpp */; };
+		6BBAE90D1871BB6300A3B6D2 /* RCUILayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE90B1871BB6300A3B6D2 /* RCUILayer.cpp */; };
+		6BBAE9101871BB7D00A3B6D2 /* RCControllerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE90E1871BB7D00A3B6D2 /* RCControllerLayer.cpp */; };
+		6BBAE9131871BB9D00A3B6D2 /* RCDPad.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9111871BB9D00A3B6D2 /* RCDPad.cpp */; };
+		6BBAE9171871BBEF00A3B6D2 /* RCActorTemplateCache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9151871BBEF00A3B6D2 /* RCActorTemplateCache.cpp */; };
+		6BBAE91A1871BBFE00A3B6D2 /* RCActorTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9181871BBFE00A3B6D2 /* RCActorTemplate.cpp */; };
+		6BBAE91D1871BC0A00A3B6D2 /* RCActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE91B1871BC0A00A3B6D2 /* RCActor.cpp */; };
+		6BBAE9201871BCC900A3B6D2 /* RCTileWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE91E1871BCC900A3B6D2 /* RCTileWorld.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -963,11 +973,29 @@
 		6B384DE11866DA2800830047 /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu2.png; path = Resources/menu2.png; sourceTree = "<group>"; };
 		6B384DE31866DA2800830047 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = Resources/background.mp3; sourceTree = "<group>"; };
 		6B384DE51866DA2800830047 /* effect1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = effect1.wav; path = Resources/effect1.wav; sourceTree = "<group>"; };
-		6B4BCF59186B14B3001C4067 /* func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = func.h; sourceTree = "<group>"; };
 		6B4BCF5A186B1DD2001C4067 /* WorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldScene.cpp; sourceTree = "<group>"; };
 		6B4BCF5B186B1DD2001C4067 /* WorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldScene.h; sourceTree = "<group>"; };
 		6BAD2E561869C96D00B382EF /* TileMapScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileMapScene.cpp; sourceTree = "<group>"; };
 		6BAD2E571869C96D00B382EF /* TileMapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapScene.h; sourceTree = "<group>"; };
+		6BBAE9031871BB0000A3B6D2 /* dpad_buttons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dpad_buttons.plist; sourceTree = "<group>"; };
+		6BBAE9041871BB0000A3B6D2 /* dpad_buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad_buttons.png; sourceTree = "<group>"; };
+		6BBAE9081871BB4B00A3B6D2 /* RCGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCGameScene.cpp; path = Classes/RCGameScene.cpp; sourceTree = "<group>"; };
+		6BBAE9091871BB4B00A3B6D2 /* RCGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCGameScene.h; path = Classes/RCGameScene.h; sourceTree = "<group>"; };
+		6BBAE90B1871BB6300A3B6D2 /* RCUILayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCUILayer.cpp; path = Classes/RCUILayer.cpp; sourceTree = "<group>"; };
+		6BBAE90C1871BB6300A3B6D2 /* RCUILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCUILayer.h; path = Classes/RCUILayer.h; sourceTree = "<group>"; };
+		6BBAE90E1871BB7D00A3B6D2 /* RCControllerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCControllerLayer.cpp; path = Classes/RCControllerLayer.cpp; sourceTree = "<group>"; };
+		6BBAE90F1871BB7D00A3B6D2 /* RCControllerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCControllerLayer.h; path = Classes/RCControllerLayer.h; sourceTree = "<group>"; };
+		6BBAE9111871BB9D00A3B6D2 /* RCDPad.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCDPad.cpp; path = Classes/RCDPad.cpp; sourceTree = "<group>"; };
+		6BBAE9121871BB9D00A3B6D2 /* RCDPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCDPad.h; path = Classes/RCDPad.h; sourceTree = "<group>"; };
+		6BBAE9141871BBC400A3B6D2 /* func.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = func.h; path = Classes/func.h; sourceTree = "<group>"; };
+		6BBAE9151871BBEF00A3B6D2 /* RCActorTemplateCache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCActorTemplateCache.cpp; path = Classes/RCActorTemplateCache.cpp; sourceTree = "<group>"; };
+		6BBAE9161871BBEF00A3B6D2 /* RCActorTemplateCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCActorTemplateCache.h; path = Classes/RCActorTemplateCache.h; sourceTree = "<group>"; };
+		6BBAE9181871BBFE00A3B6D2 /* RCActorTemplate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCActorTemplate.cpp; path = Classes/RCActorTemplate.cpp; sourceTree = "<group>"; };
+		6BBAE9191871BBFE00A3B6D2 /* RCActorTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCActorTemplate.h; path = Classes/RCActorTemplate.h; sourceTree = "<group>"; };
+		6BBAE91B1871BC0A00A3B6D2 /* RCActor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCActor.cpp; path = Classes/RCActor.cpp; sourceTree = "<group>"; };
+		6BBAE91C1871BC0A00A3B6D2 /* RCActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCActor.h; path = Classes/RCActor.h; sourceTree = "<group>"; };
+		6BBAE91E1871BCC900A3B6D2 /* RCTileWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCTileWorld.cpp; path = Classes/RCTileWorld.cpp; sourceTree = "<group>"; };
+		6BBAE91F1871BCC900A3B6D2 /* RCTileWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTileWorld.h; path = Classes/RCTileWorld.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2220,6 +2248,8 @@
 		04A6BB29187178AA0094B6F1 /* RCController */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAE9111871BB9D00A3B6D2 /* RCDPad.cpp */,
+				6BBAE9121871BB9D00A3B6D2 /* RCDPad.h */,
 			);
 			name = RCController;
 			sourceTree = "<group>";
@@ -2238,6 +2268,8 @@
 		04A6BB2C187178CA0094B6F1 /* TileMap */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAE91E1871BCC900A3B6D2 /* RCTileWorld.cpp */,
+				6BBAE91F1871BCC900A3B6D2 /* RCTileWorld.h */,
 			);
 			name = TileMap;
 			sourceTree = "<group>";
@@ -2246,6 +2278,8 @@
 			isa = PBXGroup;
 			children = (
 				04A6BB2C187178CA0094B6F1 /* TileMap */,
+				6BBAE9081871BB4B00A3B6D2 /* RCGameScene.cpp */,
+				6BBAE9091871BB4B00A3B6D2 /* RCGameScene.h */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -2267,6 +2301,10 @@
 		04A6BB30187178ED0094B6F1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAE90B1871BB6300A3B6D2 /* RCUILayer.cpp */,
+				6BBAE90C1871BB6300A3B6D2 /* RCUILayer.h */,
+				6BBAE90E1871BB7D00A3B6D2 /* RCControllerLayer.cpp */,
+				6BBAE90F1871BB7D00A3B6D2 /* RCControllerLayer.h */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -2274,6 +2312,7 @@
 		04A6BB31187179220094B6F1 /* RCHelper */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAE9141871BBC400A3B6D2 /* func.h */,
 			);
 			name = RCHelper;
 			sourceTree = "<group>";
@@ -2281,6 +2320,12 @@
 		04A6BB321871792C0094B6F1 /* RCSprite */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAE9151871BBEF00A3B6D2 /* RCActorTemplateCache.cpp */,
+				6BBAE9161871BBEF00A3B6D2 /* RCActorTemplateCache.h */,
+				6BBAE9181871BBFE00A3B6D2 /* RCActorTemplate.cpp */,
+				6BBAE9191871BBFE00A3B6D2 /* RCActorTemplate.h */,
+				6BBAE91B1871BC0A00A3B6D2 /* RCActor.cpp */,
+				6BBAE91C1871BC0A00A3B6D2 /* RCActor.h */,
 			);
 			name = RCSprite;
 			sourceTree = "<group>";
@@ -2332,6 +2377,7 @@
 		6B3849FF1866DA2000830047 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAE9021871BB0000A3B6D2 /* controller */,
 				04A6BB3418717A7D0094B6F1 /* game */,
 				6B384A001866DA2000830047 /* CloseNormal.png */,
 				6B384A021866DA2000830047 /* CloseSelected.png */,
@@ -2386,7 +2432,6 @@
 				04A6BB31187179220094B6F1 /* RCHelper */,
 				04A6BB2B187178B90094B6F1 /* RCScene */,
 				04A6BB29187178AA0094B6F1 /* RCController */,
-				6B4BCF59186B14B3001C4067 /* func.h */,
 				6B384DD01866DA2800830047 /* AppDelegate.h */,
 				6B384DD11866DA2800830047 /* AppDelegate.cpp */,
 				6B4BCF5A186B1DD2001C4067 /* WorldScene.cpp */,
@@ -2395,6 +2440,16 @@
 				6BAD2E571869C96D00B382EF /* TileMapScene.h */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		6BBAE9021871BB0000A3B6D2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6BBAE9031871BB0000A3B6D2 /* dpad_buttons.plist */,
+				6BBAE9041871BB0000A3B6D2 /* dpad_buttons.png */,
+			);
+			name = controller;
+			path = Resources/controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2473,6 +2528,7 @@
 				0418630C186BE4F500E01A3D /* ChangeLog in Resources */,
 				6B384A0D1866DA2000830047 /* Icon-Small.png in Resources */,
 				6B384A091866DA2000830047 /* Icon-72.png in Resources */,
+				6BBAE9061871BB0000A3B6D2 /* dpad_buttons.png in Resources */,
 				6B384A071866DA2000830047 /* HelloWorld.png in Resources */,
 				6B384DD61866DA2800830047 /* crop.png in Resources */,
 				6B384A0B1866DA2000830047 /* Icon-Small-50.png in Resources */,
@@ -2483,6 +2539,7 @@
 				6B384DD81866DA2800830047 /* dog.png in Resources */,
 				041862C8186BE4F500E01A3D /* README.txt in Resources */,
 				041862CA186BE4F500E01A3D /* CMakeLists.txt in Resources */,
+				6BBAE9051871BB0000A3B6D2 /* dpad_buttons.plist in Resources */,
 				6B384DE61866DA2800830047 /* effect1.wav in Resources */,
 				6B384DE21866DA2800830047 /* menu2.png in Resources */,
 				6B384A031866DA2000830047 /* CloseSelected.png in Resources */,
@@ -2516,6 +2573,7 @@
 				041862F1186BE4F500E01A3D /* CCActionProgressTimer.cpp in Sources */,
 				041863C1186BE4F500E01A3D /* spine-cocos2dx.cpp in Sources */,
 				04186360186BE4F500E01A3D /* CCTextFieldTTF.cpp in Sources */,
+				6BBAE9201871BCC900A3B6D2 /* RCTileWorld.cpp in Sources */,
 				041863C0186BE4F500E01A3D /* SlotData.cpp in Sources */,
 				041862DE186BE4F500E01A3D /* cpShape.c in Sources */,
 				04186362186BE4F500E01A3D /* CCTextureAtlas.cpp in Sources */,
@@ -2533,6 +2591,7 @@
 				0418637D186BE4F500E01A3D /* CCControlLoader.cpp in Sources */,
 				041862FF186BE4F500E01A3D /* CCDictionary.cpp in Sources */,
 				04186346186BE4F500E01A3D /* CCShaderCache.cpp in Sources */,
+				6BBAE90D1871BB6300A3B6D2 /* RCUILayer.cpp in Sources */,
 				041862F4186BE4F500E01A3D /* CCAtlasNode.cpp in Sources */,
 				04186383186BE4F500E01A3D /* CCLayerLoader.cpp in Sources */,
 				0418638F186BE4F500E01A3D /* CCComController.cpp in Sources */,
@@ -2543,6 +2602,7 @@
 				04186347186BE4F500E01A3D /* ccShaders.cpp in Sources */,
 				041862DA186BE4F500E01A3D /* cpBody.c in Sources */,
 				0418632C186BE4F500E01A3D /* CCParticleSystem.cpp in Sources */,
+				6BBAE9101871BB7D00A3B6D2 /* RCControllerLayer.cpp in Sources */,
 				04186304186BE4F500E01A3D /* CCString.cpp in Sources */,
 				041863D4186BE4F600E01A3D /* tolua_push.c in Sources */,
 				0418639C186BE4F500E01A3D /* CCScale9Sprite.cpp in Sources */,
@@ -2588,6 +2648,7 @@
 				6B384A1D1866DA2000830047 /* RootViewController.mm in Sources */,
 				0418634C186BE4F500E01A3D /* CCSpriteFrame.cpp in Sources */,
 				04186329186BE4F500E01A3D /* CCRenderTexture.cpp in Sources */,
+				6BBAE9131871BB9D00A3B6D2 /* RCDPad.cpp in Sources */,
 				041862F5186BE4F500E01A3D /* CCNode.cpp in Sources */,
 				04186352186BE4F500E01A3D /* ccUTF8.cpp in Sources */,
 				041863C4186BE4F500E01A3D /* CCLuaBridge.cpp in Sources */,
@@ -2650,6 +2711,7 @@
 				04186364186BE4F500E01A3D /* CCTextureETC.cpp in Sources */,
 				04186377186BE4F500E01A3D /* CCBKeyframe.cpp in Sources */,
 				0418631D186BE4F500E01A3D /* CCLabelBMFont.cpp in Sources */,
+				6BBAE9171871BBEF00A3B6D2 /* RCActorTemplateCache.cpp in Sources */,
 				04186323186BE4F500E01A3D /* CCTransitionProgress.cpp in Sources */,
 				6B4BCF5C186B1DD2001C4067 /* WorldScene.cpp in Sources */,
 				04186382186BE4F500E01A3D /* CCLayerGradientLoader.cpp in Sources */,
@@ -2670,6 +2732,7 @@
 				04186310186BE4F500E01A3D /* mat3.c in Sources */,
 				04186345186BE4F500E01A3D /* ccGLStateCache.cpp in Sources */,
 				041863B7186BE4F500E01A3D /* CCSkeletonAnimation.cpp in Sources */,
+				6BBAE91D1871BC0A00A3B6D2 /* RCActor.cpp in Sources */,
 				04186393186BE4F500E01A3D /* CCControlColourPicker.cpp in Sources */,
 				041863BF186BE4F500E01A3D /* Slot.cpp in Sources */,
 				041862DC186BE4F500E01A3D /* cpHashSet.c in Sources */,
@@ -2737,8 +2800,10 @@
 				04186309186BE4F500E01A3D /* CCGrabber.cpp in Sources */,
 				041863D1186BE4F500E01A3D /* tolua_event.c in Sources */,
 				0418632D186BE4F500E01A3D /* CCParticleSystemQuad.cpp in Sources */,
+				6BBAE91A1871BBFE00A3B6D2 /* RCActorTemplate.cpp in Sources */,
 				04186358186BE4F500E01A3D /* TGAlib.cpp in Sources */,
 				0418638E186BE4F500E01A3D /* CCComAudio.cpp in Sources */,
+				6BBAE90A1871BB4B00A3B6D2 /* RCGameScene.cpp in Sources */,
 				04186306186BE4F500E01A3D /* cocos2d.cpp in Sources */,
 				04186349186BE4F500E01A3D /* CCAnimationCache.cpp in Sources */,
 				04186384186BE4F500E01A3D /* CCMenuItemImageLoader.cpp in Sources */,
@@ -2855,9 +2920,9 @@
 					TilemapDemo/TilemapDemo/libs/cocos2dx/platform/third_party/ios/libraries,
 					TilemapDemo/TilemapDemo/libs/lua/luajit/ios,
 					TilemapDemo/TilemapDemo/libs/libwebsockets/ios/lib,
-					/Users/hy/Documents/Git/TileMapDemo/TilemapDemo/libs/cocos2dx/platform/third_party/ios/libraries,
-					/Users/hy/Documents/Git/TileMapDemo/TilemapDemo/libs/libwebsockets/ios/lib,
-					/Users/hy/Documents/Git/TileMapDemo/TilemapDemo/libs/lua/luajit/ios,
+					./TilemapDemo/libs/cocos2dx/platform/third_party/ios/libraries,
+					./TilemapDemo/libs/libwebsockets/ios/lib,
+					./TilemapDemo/libs/lua/luajit/ios,
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -2886,9 +2951,9 @@
 					TilemapDemo/TilemapDemo/libs/cocos2dx/platform/third_party/ios/libraries,
 					TilemapDemo/TilemapDemo/libs/lua/luajit/ios,
 					TilemapDemo/TilemapDemo/libs/libwebsockets/ios/lib,
-					/Users/hy/Documents/Git/TileMapDemo/TilemapDemo/libs/cocos2dx/platform/third_party/ios/libraries,
-					/Users/hy/Documents/Git/TileMapDemo/TilemapDemo/libs/libwebsockets/ios/lib,
-					/Users/hy/Documents/Git/TileMapDemo/TilemapDemo/libs/lua/luajit/ios,
+					./TilemapDemo/libs/cocos2dx/platform/third_party/ios/libraries,
+					./TilemapDemo/libs/libwebsockets/ios/lib,
+					./TilemapDemo/libs/lua/luajit/ios,
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",

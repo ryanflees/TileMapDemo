@@ -3,8 +3,9 @@
 #include "SimpleAudioEngine.h"
 #include "script_support/CCScriptSupport.h"
 #include "CCLuaEngine.h"
-#include "TileMapScene.h"
-#include "WorldScene.h"
+//#include "TileMapScene.h"
+//#include "WorldScene.h"
+#include "RCGameScene.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -48,7 +49,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     //pEngine->executeScriptFile(path.c_str());
 
     //CCScene* scene = TileMapeScene::scene();
-    CCScene* scene = WorldScene::scene();
+    CCScene* scene = RCGameScene::scene();
     CCDirector::sharedDirector()->runWithScene(scene);
     
     return true;
