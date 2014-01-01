@@ -2450,6 +2450,7 @@
 		6B384DCF1866DA2800830047 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAE92218740C0100A3B6D2 /* RCNetwork */,
 				04B1DD1A18726A9500F062D6 /* RCAudio */,
 				04A6BB321871792C0094B6F1 /* RCSprite */,
 				04A6BB31187179220094B6F1 /* RCHelper */,
@@ -2473,6 +2474,13 @@
 			);
 			name = controller;
 			path = Resources/controller;
+			sourceTree = "<group>";
+		};
+		6BBAE92218740C0100A3B6D2 /* RCNetwork */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = RCNetwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

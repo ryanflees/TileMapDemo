@@ -16,7 +16,8 @@
 class RCActor;
 class RCActorTemplate;
 class RCControllerLayer;
-class RCTileWorld : public cocos2d::CCLayer {
+class RCTileWorld : public cocos2d::CCLayer, RCWorldManagerDelegate
+{
     
 public:
     RCTileWorld();
@@ -29,6 +30,10 @@ public:
     
     void bindControllerLayer(RCControllerLayer* controllerLayer);
     RCActor *getPlayer(){ return m_player;}
+    
+    virtual cocos2d::CCSize onGetWorldSize(RCWorldManager* worldManager);
+    virtual cocos2d::CCSize onGetWorldSizeInPixels(RCWorldManager* worldManager);
+    void setWorldScale(float scale);
 private:
     RCWorldManager *m_worldManager;
     cocos2d::CCNode *m_gameNode;

@@ -60,6 +60,9 @@ bool RCTileWorld::initWithTmxFile(const char *tmxFile)
     
     m_worldManager = RCWorldManager::create();
     addChild(m_worldManager);
+    m_worldManager->setGameNodeRef(m_gameNode);
+    m_worldManager->setTileMapeRef(m_tileMap);
+    m_worldManager->setDelegate(this);
     
     return true;
 }
@@ -87,6 +90,26 @@ void RCTileWorld::removePlayer()
 void RCTileWorld::bindControllerLayer(RCControllerLayer* controllerLayer)
 {
     m_worldManager->setControllerLayerRef(controllerLayer);
+}
+
+CCSize RCTileWorld::onGetWorldSize(RCWorldManager *worldManager)
+{
+    float scalex = m_gameNode->getScaleX() * m_tileMap->getScaleX();
+    float scaley = m_gameNode->getScaleY() * m_tileMap->getScaleY();
+    
+    CCSize size = CCSizeMake(m_tileMap->getContentSize().width*scalex, m_tileMap->getContentSize().height*scaley);
+    return size;
+}
+
+CCSize RCTileWorld::onGetWorldSizeInPixels(RCWorldManager* worldManager)
+{
+    CCSize size = CCSizeMake(m_tileMap->getContentSize().width, m_tileMap->getContentSize().height);
+    return size;
+}
+
+void RCTileWorld::setWorldScale(float scale)
+{
+    m_gameNode->setScale(scale);
 }
 
 
