@@ -251,7 +251,7 @@ void RCWorldManager::update(float delta)
     //CCPoint newPoint = m_playerRef->convertToWorldSpaceAR(m_playerRef->getPosition());
     CCPoint newPoint = m_gameNodeRef->convertToWorldSpace(m_playerRef->getPosition());
     //CCPoint newPoint = CCDirector::sharedDirector()->convertToUI(playerPosition);
-    CCLog("new point %f %f",newPoint.x, newPoint.y);
+    //CCLog("new point %f %f",newPoint.x, newPoint.y);
     //CCSize size = getTilemapSize();
     //CCLog("size %f %f",size.width, size.height);
     

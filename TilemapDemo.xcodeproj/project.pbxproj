@@ -328,6 +328,7 @@
 		6BBAE91A1871BBFE00A3B6D2 /* RCActorTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9181871BBFE00A3B6D2 /* RCActorTemplate.cpp */; };
 		6BBAE91D1871BC0A00A3B6D2 /* RCActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE91B1871BC0A00A3B6D2 /* RCActor.cpp */; };
 		6BBAE9201871BCC900A3B6D2 /* RCTileWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE91E1871BCC900A3B6D2 /* RCTileWorld.cpp */; };
+		6BBAE92A1876FD1A00A3B6D2 /* RCButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9281876FD1A00A3B6D2 /* RCButton.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1005,6 +1006,8 @@
 		6BBAE91C1871BC0A00A3B6D2 /* RCActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCActor.h; path = Classes/RCActor.h; sourceTree = "<group>"; };
 		6BBAE91E1871BCC900A3B6D2 /* RCTileWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCTileWorld.cpp; path = Classes/RCTileWorld.cpp; sourceTree = "<group>"; };
 		6BBAE91F1871BCC900A3B6D2 /* RCTileWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTileWorld.h; path = Classes/RCTileWorld.h; sourceTree = "<group>"; };
+		6BBAE9281876FD1A00A3B6D2 /* RCButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCButton.cpp; path = Classes/RCButton.cpp; sourceTree = "<group>"; };
+		6BBAE9291876FD1A00A3B6D2 /* RCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCButton.h; path = Classes/RCButton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2257,8 +2260,8 @@
 		04A6BB29187178AA0094B6F1 /* RCController */ = {
 			isa = PBXGroup;
 			children = (
-				6BBAE9111871BB9D00A3B6D2 /* RCDPad.cpp */,
-				6BBAE9121871BB9D00A3B6D2 /* RCDPad.h */,
+				6BBAE9271876FCF200A3B6D2 /* RCButton */,
+				6BBAE9251876FCEA00A3B6D2 /* RCDPad */,
 			);
 			name = RCController;
 			sourceTree = "<group>";
@@ -2483,6 +2486,24 @@
 			name = RCNetwork;
 			sourceTree = "<group>";
 		};
+		6BBAE9251876FCEA00A3B6D2 /* RCDPad */ = {
+			isa = PBXGroup;
+			children = (
+				6BBAE9111871BB9D00A3B6D2 /* RCDPad.cpp */,
+				6BBAE9121871BB9D00A3B6D2 /* RCDPad.h */,
+			);
+			name = RCDPad;
+			sourceTree = "<group>";
+		};
+		6BBAE9271876FCF200A3B6D2 /* RCButton */ = {
+			isa = PBXGroup;
+			children = (
+				6BBAE9281876FD1A00A3B6D2 /* RCButton.cpp */,
+				6BBAE9291876FD1A00A3B6D2 /* RCButton.h */,
+			);
+			name = RCButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2691,6 +2712,7 @@
 				041863CD186BE4F500E01A3D /* tolua_fix.c in Sources */,
 				04186398186BE4F500E01A3D /* CCControlStepper.cpp in Sources */,
 				04186335186BE4F500E01A3D /* CCCommon.mm in Sources */,
+				6BBAE92A1876FD1A00A3B6D2 /* RCButton.cpp in Sources */,
 				041863C6186BE4F500E01A3D /* CCLuaStack.cpp in Sources */,
 				0418637A186BE4F500E01A3D /* CCBSequenceProperty.cpp in Sources */,
 				0418635F186BE4F500E01A3D /* CCIMEDispatcher.cpp in Sources */,

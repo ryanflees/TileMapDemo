@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "cocos2d.h"
+#include "RCButton.h"
 
 class RCDPad;
 class RCControllerLayer;
@@ -31,8 +32,14 @@ public:
     virtual void onExit();
     virtual void update(float delta);
     
+    virtual void ccTouchesBegan(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    virtual void ccTouchesMoved(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    virtual void ccTouchesEnded(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    virtual void ccTouchesCancelled(cocos2d::CCSet *pTouches, cocos2d::CCEvent *pEvent);
+    
 private:
     RCDPad *m_dPad;
+    RCButton *m_buttonA;
     CC_SYNTHESIZE(RCControllerLayerDelegate*, m_delegate, Delegate);
 };
 
