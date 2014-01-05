@@ -9,6 +9,7 @@
 #include "RCTileWorld.h"
 #include "RCActor.h"
 #include "RCActorTemplate.h"
+#include "RCActorTemplateCache.h"
 
 USING_NS_CC;
 
@@ -58,10 +59,14 @@ bool RCTileWorld::initWithTmxFile(const char *tmxFile)
     m_tileMap = CCTMXTiledMap::create(tmxFile);
     m_gameNode->addChild(m_tileMap);
     
+    m_actorNode = CCNode::create();
+    m_gameNode->addChild(m_actorNode);
+    
+    generateNPCActors();
+    
     m_worldManager = RCWorldManager::create();
     addChild(m_worldManager);
-    m_worldManager->setGameNodeRef(m_gameNode);
-    m_worldManager->setTileMapeRef(m_tileMap);
+    m_worldManager->setTileMapGameNode(m_gameNode, m_tileMap);
     m_worldManager->setDelegate(this);
     
     return true;
@@ -74,7 +79,8 @@ void RCTileWorld::addPlayer(RCActorTemplate* actorTemplate)
         m_player = NULL;
     }
     m_player = RCActor::createWithTemplate(actorTemplate);
-    m_gameNode->addChild(m_player);
+    m_actorNode->addChild(m_player);
+    m_player->setVisible(false);
     m_worldManager->setPlayerRef(m_player);
 }
 
@@ -112,6 +118,71 @@ void RCTileWorld::setWorldScale(float scale)
     m_gameNode->setScale(scale);
 }
 
+void RCTileWorld::onEnter()
+{
+    CCLayer::onEnter();
+    scheduleUpdate();
+}
+
+void RCTileWorld::onExit()
+{
+    CCLayer::onExit();
+    unscheduleUpdate();
+}
+
+void RCTileWorld::update(float delta)
+{
+    CCSize mapSize = onGetWorldSizeInPixels(NULL);
+    CCObject *object;
+    CCARRAY_FOREACH(m_actorNode->getChildren(), object)
+    {
+        CCNode *node = (CCNode*)object;
+        int zorder = mapSize.height - node->getPositionY();
+        node->setZOrder(zorder);
+      //  m_actorNode->reorderChild(node, zorder);
+    }
+}
+
+void RCTileWorld::generateNPCActors()
+{
+    CCTMXObjectGroup *objectLayer = m_tileMap->objectGroupNamed("ObjectLayer");
+    
+    for (int i=0; i<objectLayer->getObjects()->count(); i++) {
+        CCDictionary *dict = (CCDictionary*)objectLayer->getObjects()->objectAtIndex(i);
+        const CCString *type = dict->valueForKey("type");
+        if (strcmp(type->getCString(), "spawn") == 0) {
+            const CCString *isNPCStr = dict->valueForKey("npc");
+            if (isNPCStr->intValue()) {
+                const CCString *npcActorName = dict->valueForKey("actor");
+                CCPoint tilePos = getTilePositionByDict(dict);
+                addNPC(npcActorName->getCString(), tilePos);
+            }
+        }
+    }
+}
+
+void RCTileWorld::addNPC(const char *actorName, cocos2d::CCPoint position)
+{
+    RCActorTemplate *actorTemplate = RCActorTemplateCache::sharedActorTemplateCache()->getActorTemplateByName(actorName);
+    RCActor *npcActor = RCActor::createWithTemplate(actorTemplate);
+    m_actorNode->addChild(npcActor);
+    npcActor->setPosition(position);
+    npcActor->setActorActionByKey(kStandDown);
+    m_actorArray->addObject(npcActor);
+}
+
+cocos2d::CCPoint RCTileWorld::getTilePositionByDict(cocos2d::CCDictionary *tileDict)
+{
+    if (!tileDict) {
+        return CCPointZero;
+    }
+    float x, y, width, height;
+    x = tileDict->valueForKey("x")->floatValue();
+    y = tileDict->valueForKey("y")->floatValue();
+    width =  tileDict->valueForKey("width")->floatValue();
+    height =  tileDict->valueForKey("height")->floatValue();
+    return ccp(x+width/2,y+height/2);
+}
 
 
 

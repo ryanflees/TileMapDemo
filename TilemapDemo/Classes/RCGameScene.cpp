@@ -28,18 +28,19 @@ bool RCGameScene::init()
         return false;
     }
     
+    RCActorTemplateCache::sharedActorTemplateCache()->addActorByFile("game/DSMaterials/Graphics/Characters/hero.plist");
+    
     m_tileWorld = RCTileWorld::createWithTmxFile("game/tilemap/game_world.tmx");
     addChild(m_tileWorld);
     m_tileWorld->setAnchorPoint(CCPointZero);
     m_tileWorld->setPosition(CCPointZero);
     m_tileWorld->setWorldScale(2.0f);
     
-    RCActorTemplateCache::sharedActorTemplateCache()->addActorByFile("game/DSMaterials/Graphics/Characters/hero.plist");
     RCActorTemplate *actorTemplate = RCActorTemplateCache::sharedActorTemplateCache()->getActorTemplateByName("hero1");
     m_tileWorld->addPlayer(actorTemplate);
     RCActor *player = m_tileWorld->getPlayer();
     player->setSpeed(100);
-    player->setPosition(ccp(400, 200));
+    //player->setPosition(ccp(400, 200));
     //m_tileWorld->setPosition(ccp(-200,-200));
     
     m_controllerLayer = RCControllerLayer::create();

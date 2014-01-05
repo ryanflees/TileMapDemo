@@ -34,9 +34,18 @@ public:
     virtual cocos2d::CCSize onGetWorldSize(RCWorldManager* worldManager);
     virtual cocos2d::CCSize onGetWorldSizeInPixels(RCWorldManager* worldManager);
     void setWorldScale(float scale);
+    
+    virtual void onEnter();
+    virtual void onExit();
+    virtual void update(float delta);
 private:
+    void generateNPCActors();
+    void addNPC(const char *actorName, cocos2d::CCPoint position);
+    cocos2d::CCPoint getTilePositionByDict(cocos2d::CCDictionary *tileDict);
+    
     RCWorldManager *m_worldManager;
     cocos2d::CCNode *m_gameNode;
+    cocos2d::CCNode *m_actorNode;
     
     cocos2d::CCTMXTiledMap *m_tileMap;
     RCActor *m_player;

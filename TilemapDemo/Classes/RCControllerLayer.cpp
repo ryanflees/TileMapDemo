@@ -33,6 +33,7 @@ bool RCControllerLayer::init()
     m_dPad = RCDPad::create();
     m_dPad->setScale(1.5f);
     addChild(m_dPad);
+    m_dPad->setOpacity(155);
     
     CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
     m_dPad->setPosition(ccp(screenSize.width*0.2f,screenSize.height*0.2f));

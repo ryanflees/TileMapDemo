@@ -13,6 +13,27 @@
 #include "cocos2d.h"
 #include "RCControllerLayer.h"
 
+#define kMoveUpAction "move_up"
+#define kMoveDownAction "move_down"
+#define kMoveLeftAction "move_left"
+#define kMoveRightAction "move_right"
+#define kStandDown "stand_down"
+#define kStandUp "stand_up"
+#define kStandLeft "stand_left"
+#define kStandRight "stand_right"
+
+typedef enum
+{
+    kActionMoveUp,
+    kActionMoveDown,
+    kActionMoveLeft,
+    kActionMoveRight,
+    kActionStandUp,
+    kActionStandDown,
+    kActionStandLeft,
+    kActionStandRight
+}ActorMoveDirectionEnum;
+
 class RCWorldManager;
 class RCWorldManagerDelegate
 {
@@ -37,25 +58,38 @@ public:
     virtual void onExit();
     virtual void update(float delta);
     
-    void setTileMapeRef(cocos2d::CCTMXTiledMap* tileMap);
+    void setTileMapGameNode(cocos2d::CCNode *gameNode, cocos2d::CCTMXTiledMap* tileMap);
+    void setActorArray(cocos2d::CCArray *actorArray);
 private:
     void checkObjectInteract(cocos2d::CCPoint point);
+    
     cocos2d::CCPoint tilePosFromLocation(cocos2d::CCPoint location,
                                          cocos2d::CCTMXTiledMap* tileMap);
+    
     cocos2d::CCRect getRectFromObjectProperties(cocos2d::CCDictionary* dict,
                                                 cocos2d::CCTMXTiledMap*tileMap);
+    
     bool checkBarrierCollision(cocos2d::CCPoint position);
+    
+    bool checkPositionInsideTileMap(cocos2d::CCPoint position);
+    
     cocos2d::CCPoint checkBarrierCollisionForOffset(cocos2d::CCPoint offset, RCActor* player);
+
+    void setActorPositionOnTile(RCActor *actor, cocos2d::CCDictionary *tileDict);
     
     cocos2d::CCSize getTilemapSize();
+    
     cocos2d::CCSize getTilemapSizeInPixels();
+    
     void adjustCamera(cocos2d::CCPoint moveOffset);
     
     CC_SYNTHESIZE(RCWorldManagerDelegate*, m_delegate, Delegate);
-    cocos2d::CCTMXTiledMap* m_tileMapeRef;
-    RCActor *m_playerRef;
-    CC_SYNTHESIZE(cocos2d::CCNode*, m_gameNodeRef, GameNodeRef);
-    RCControllerLayer* m_controllerLayerRef;
+    cocos2d::CCTMXTiledMap* m_tileMap;
+    RCActor *m_player;
+    cocos2d::CCNode *m_gameNode;
+    RCControllerLayer* m_controllerLayer;
+    cocos2d::CCArray *m_actorArray;
+    cocos2d::CCPoint m_blockOffset;
     
     int m_playerAction;
     

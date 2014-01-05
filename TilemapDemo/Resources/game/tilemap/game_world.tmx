@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="64" height="64" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="block_offset_x" value="0"/>
+  <property name="block_offset_y" value="10"/>
+ </properties>
  <tileset firstgid="1" name="Exterior_Forest_TileA2" tilewidth="16" tileheight="16">
   <image source="../DSMaterials/Graphics/Tilesets/A2/Exterior_Forest_TileA2.png" width="512" height="384"/>
  </tileset>
@@ -216,6 +220,16 @@
   </data>
  </layer>
  <objectgroup name="ObjectLayer" width="64" height="64">
-  <object x="304" y="881" width="31" height="31"/>
+  <object name="Spawn" type="spawn" x="416" y="877" width="31" height="31">
+   <properties>
+    <property name="player" value="1"/>
+   </properties>
+  </object>
+  <object name="NPCSpawn" type="spawn" x="361" y="738" width="27" height="28">
+   <properties>
+    <property name="actor" value="hero2"/>
+    <property name="npc" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

@@ -10,48 +10,28 @@
 #include "RCActor.h"
 #include "func.h"
 
-#define kMoveUpAction "move_up"
-#define kMoveDownAction "move_down"
-#define kMoveLeftAction "move_left"
-#define kMoveRightAction "move_right"
-#define kStandDown "stand_down"
-#define kStandUp "stand_up"
-#define kStandLeft "stand_left"
-#define kStandRight "stand_right"
-
-typedef enum
-{
-    kActionMoveUp,
-    kActionMoveDown,
-    kActionMoveLeft,
-    kActionMoveRight,
-    kActionStandUp,
-    kActionStandDown,
-    kActionStandLeft,
-    kActionStandRight
-}ActorMoveDirectionEnum;
-
 #define kScreenInsightScale ccp(0.8,0.8)
 #define kScreenInsectSize CCSizeMake(200,200)
 #define kPlayerOnMapEdgeSize CCSizeMake(10,10)
 
 USING_NS_CC;
 
-RCWorldManager::RCWorldManager():m_controllerLayerRef()
-        ,m_playerRef()
-        ,m_tileMapeRef()
-        ,m_gameNodeRef()
+RCWorldManager::RCWorldManager():m_controllerLayer()
+        ,m_player()
+        ,m_tileMap()
+        ,m_gameNode()
         ,m_delegate()
         ,m_landscapeLayer()
         ,m_miscLayer()
+        ,m_actorArray()
 {
 
 }
 
 RCWorldManager::~RCWorldManager()
 {
-    if (m_controllerLayerRef) {
-        m_controllerLayerRef->setDelegate(NULL);
+    if (m_controllerLayer) {
+        m_controllerLayer->setDelegate(NULL);
     }
 }
 
@@ -60,7 +40,7 @@ bool RCWorldManager::init()
     if (!CCNode::init()) {
         return false;
     }
-    
+    m_blockOffset = CCPointZero;
     CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
     //m_screenInsight =CCRectMake(screenSize.width*(1-kScreenInsightScale.x)*0.5f
     //                            ,screenSize.height*(1-kScreenInsightScale.y)*0.5f
@@ -75,28 +55,28 @@ bool RCWorldManager::init()
 
 void RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, cocos2d::CCPoint pressedVector,float delta)
 {
-    if (!m_playerRef) {
+    if (!m_player) {
         return;
     }
     if (pressedVector.x == 0 && pressedVector.y == 0) {
         if (m_playerAction == kActionMoveRight) {
             m_playerAction = kActionStandRight;
-            m_playerRef->setActorActionByKey(kStandRight);
+            m_player->setActorActionByKey(kStandRight);
         }
         else if (m_playerAction == kActionMoveLeft)
         {
             m_playerAction = kActionStandLeft;
-            m_playerRef->setActorActionByKey(kStandLeft);
+            m_player->setActorActionByKey(kStandLeft);
         }
         else if (m_playerAction == kActionMoveUp)
         {
             m_playerAction = kActionStandUp;
-            m_playerRef->setActorActionByKey(kStandUp);
+            m_player->setActorActionByKey(kStandUp);
         }
         else if (m_playerAction == kActionMoveDown)
         {
             m_playerAction = kActionStandDown;
-            m_playerRef->setActorActionByKey(kStandDown);
+            m_player->setActorActionByKey(kStandDown);
         }
         
         return;
@@ -109,36 +89,37 @@ void RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, 
     if (delAngle <= 60 || delAngle >= 300) {
         if (m_playerAction != kActionMoveRight) {
             m_playerAction = kActionMoveRight;
-            m_playerRef->setActorActionByKey(kMoveRightAction);
+            m_player->setActorActionByKey(kMoveRightAction);
         }
     }
     else if (delAngle > 60 && delAngle < 120)
     {
         if (m_playerAction != kActionMoveUp) {
             m_playerAction = kActionMoveUp;
-            m_playerRef->setActorActionByKey(kMoveUpAction);
+            m_player->setActorActionByKey(kMoveUpAction);
         }
     }
     else if (delAngle >= 120 && delAngle <= 240)
     {
         if (m_playerAction != kActionMoveLeft) {
             m_playerAction = kActionMoveLeft;
-            m_playerRef->setActorActionByKey(kMoveLeftAction);
+            m_player->setActorActionByKey(kMoveLeftAction);
         }
     }
     else if (delAngle > 240 && delAngle < 300)
     {
         if (m_playerAction != kActionMoveDown) {
             m_playerAction = kActionMoveDown;
-            m_playerRef->setActorActionByKey(kMoveDownAction);
+            m_player->setActorActionByKey(kMoveDownAction);
         }
     }
     
-    CCPoint moveOffset = getPositionOnTheCircle(CCPointZero, m_playerRef->getSpeed(), delAngle);
+    CCPoint moveOffset = getPositionOnTheCircle(CCPointZero, m_player->getSpeed(), delAngle);
     moveOffset = ccp(moveOffset.x*delta, moveOffset.y*delta);
-    moveOffset = checkBarrierCollisionForOffset(moveOffset, m_playerRef);
     
-    CCPoint newPos = m_playerRef->getPosition() + moveOffset;
+    moveOffset = checkBarrierCollisionForOffset(moveOffset, m_player);
+    
+    CCPoint newPos = m_player->getPosition() + moveOffset;
     CCSize mapSize = getTilemapSizeInPixels();
     CCRect mapRect = CCRectMake(kPlayerOnMapEdgeSize.width
                                 , kPlayerOnMapEdgeSize.height
@@ -146,75 +127,82 @@ void RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, 
                                 , mapSize.height - kPlayerOnMapEdgeSize.height*2);
     if (moveOffset.x < 0) {
         if (newPos.x < mapRect.origin.x) {
-            newPos.x = m_playerRef->getPositionX();
+            newPos.x = m_player->getPositionX();
         }
     }
     if (moveOffset.y < 0) {
         if (newPos.y < mapRect.origin.y) {
-            newPos.y = m_playerRef->getPositionY();
+            newPos.y = m_player->getPositionY();
         }
     }
     if (moveOffset.x > 0) {
         if (newPos.x > mapRect.origin.x + mapRect.size.width) {
-            newPos.x = m_playerRef->getPositionX();
+            newPos.x = m_player->getPositionX();
         }
     }
     if (moveOffset.y > 0) {
         if (newPos.y > mapRect.origin.y + mapRect.size.height) {
-            newPos.y = m_playerRef->getPositionY();
+            newPos.y = m_player->getPositionY();
         }
     }
     
-    m_playerRef->setPosition(newPos);
+    m_player->setPosition(newPos);
     adjustCamera(moveOffset);
-    
-//    if (pointIsInRect(newPos, mapRect)) {
-//    }
 }
 
-void RCWorldManager::setTileMapeRef(cocos2d::CCTMXTiledMap* tileMap)
+void RCWorldManager::setTileMapGameNode(cocos2d::CCNode *gameNode,cocos2d::CCTMXTiledMap* tileMap)
 {
-    m_tileMapeRef = tileMap;
-    m_landscapeLayer = m_tileMapeRef->layerNamed("LanscapeLayer");
-    m_miscLayer = m_tileMapeRef->layerNamed("MiscLayer");
+    m_gameNode = gameNode;
+    m_tileMap = tileMap;
+    m_landscapeLayer = m_tileMap->layerNamed("LanscapeLayer");
+    m_miscLayer = m_tileMap->layerNamed("MiscLayer");
+    
+    CCString *blockOffsetX = m_tileMap->propertyNamed("block_offset_x");
+    CCString *blockOffsetY = m_tileMap->propertyNamed("block_offset_y");
+    m_blockOffset = ccp(blockOffsetX->floatValue(), blockOffsetY->floatValue());
+}
+
+void RCWorldManager::setActorArray(cocos2d::CCArray *actorArray)
+{
+    m_actorArray = actorArray;
 }
 
 void RCWorldManager::adjustCamera(CCPoint moveOffset)
 {
-    CCPoint playerOnScreenPos = m_gameNodeRef->convertToWorldSpace(m_playerRef->getPosition());
+    CCPoint playerOnScreenPos = m_gameNode->convertToWorldSpace(m_player->getPosition());
     CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
     CCSize mapSize = getTilemapSize();
     if (moveOffset.x > 0) {
         if (playerOnScreenPos.x > m_screenInsight.origin.x + m_screenInsight.size.width) {
-            CCPoint nodeNewPos = m_gameNodeRef->getPosition() + ccp(-moveOffset.x*m_gameNodeRef->getScaleX(),0);
+            CCPoint nodeNewPos = m_gameNode->getPosition() + ccp(-moveOffset.x*m_gameNode->getScaleX(),0);
             if ( screenSize.width - nodeNewPos.x <= mapSize.width) {
-                m_gameNodeRef->setPosition(nodeNewPos);
+                m_gameNode->setPosition(nodeNewPos);
             }
         }
     }
     if (moveOffset.x < 0) {
         if (playerOnScreenPos.x < m_screenInsight.origin.x) {
-            CCPoint nodeNewPos = m_gameNodeRef->getPosition() +                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ccp(-moveOffset.x*m_gameNodeRef->getScaleX(),0);
+            CCPoint nodeNewPos = m_gameNode->getPosition() +                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ccp(-moveOffset.x*m_gameNode->getScaleX(),0);
             if (nodeNewPos.x <= 0) {
-                m_gameNodeRef->setPosition(nodeNewPos);
+                m_gameNode->setPosition(nodeNewPos);
             }
         }
     }
     if (moveOffset.y > 0) {
         if (playerOnScreenPos.y > m_screenInsight.origin.y + m_screenInsight.size.height) {
-            CCPoint nodeNewPos = m_gameNodeRef->getPosition() +
-            ccp(0, -moveOffset.y*m_gameNodeRef->getScaleY());
+            CCPoint nodeNewPos = m_gameNode->getPosition() +
+            ccp(0, -moveOffset.y*m_gameNode->getScaleY());
             if (screenSize.height - nodeNewPos.y <= mapSize.height) {
-                m_gameNodeRef->setPosition(nodeNewPos);
+                m_gameNode->setPosition(nodeNewPos);
             }
         }
     }
     if (moveOffset.y < 0) {
         if (playerOnScreenPos.y < m_screenInsight.origin.y) {
-            CCPoint nodeNewPos = m_gameNodeRef->getPosition() +
-            ccp(0, -moveOffset.y*m_gameNodeRef->getScaleY());
+            CCPoint nodeNewPos = m_gameNode->getPosition() +
+            ccp(0, -moveOffset.y*m_gameNode->getScaleY());
             if (nodeNewPos.y <= 0) {
-                m_gameNodeRef->setPosition(nodeNewPos);
+                m_gameNode->setPosition(nodeNewPos);
             }
         }
     }
@@ -222,21 +210,47 @@ void RCWorldManager::adjustCamera(CCPoint moveOffset)
 
 void RCWorldManager::setControllerLayerRef(RCControllerLayer* controllerLayer)
 {
-    if (m_controllerLayerRef) {
-        m_controllerLayerRef->setDelegate(NULL);
+    if (m_controllerLayer) {
+        m_controllerLayer->setDelegate(NULL);
     }
-    m_controllerLayerRef = controllerLayer;
-    if (m_controllerLayerRef) {
-        m_controllerLayerRef->setDelegate(this);
+    m_controllerLayer = controllerLayer;
+    if (m_controllerLayer) {
+        m_controllerLayer->setDelegate(this);
     }
 }
 
 void RCWorldManager::setPlayerRef(RCActor *player)
 {
-    m_playerRef = player;
-    if (m_playerRef) {
+    m_player = player;
+    if (m_player) {
         m_playerAction = kActionStandDown;
-        m_playerRef->setActorActionByKey(kStandDown);
+        m_player->setActorActionByKey(kStandDown);
+        
+        CCTMXObjectGroup *objectLayer = m_tileMap->objectGroupNamed("ObjectLayer");
+
+//        CCDictionary *dict = (CCDictionary*) objectLayer->objectNamed("Spawn");
+//        float x, y, width, height;
+//        x = dict->valueForKey("x")->floatValue();
+//        y = dict->valueForKey("y")->floatValue();
+//        width =  dict->valueForKey("width")->floatValue();
+//        height =  dict->valueForKey("height")->floatValue();
+//        m_player->setVisible(true);
+//        m_player->setPosition(ccp(x, y));
+//
+        m_player->setVisible(true);
+        for (int i=0; i<objectLayer->getObjects()->count(); i++) {
+            CCDictionary *dict = (CCDictionary*)objectLayer->getObjects()->objectAtIndex(i);
+            const CCString *type = dict->valueForKey("type");
+            if (strcmp(type->getCString(), "spawn") == 0) {
+                const CCString *isPlayerStr = dict->valueForKey("player");
+                if (isPlayerStr) {
+                    int isPlayerSpawn = isPlayerStr->intValue();
+                    if (isPlayerSpawn) {
+                        setActorPositionOnTile(m_player, dict);
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -254,14 +268,14 @@ void RCWorldManager::onExit()
 
 void RCWorldManager::update(float delta)
 {
-    if (!m_playerRef) {
+    if (!m_player) {
         return;
     }
     
-    CCPoint playerPosition = m_playerRef->getPosition();
-    //CCPoint newPoint = m_playerRef->convertToWorldSpace(m_playerRef->getPosition());
-    //CCPoint newPoint = m_playerRef->convertToWorldSpaceAR(m_playerRef->getPosition());
-    CCPoint newPoint = m_gameNodeRef->convertToWorldSpace(m_playerRef->getPosition());
+    CCPoint playerPosition = m_player->getPosition();
+    //CCPoint newPoint = m_player->convertToWorldSpace(m_player->getPosition());
+    //CCPoint newPoint = m_player->convertToWorldSpaceAR(m_player->getPosition());
+    CCPoint newPoint = m_gameNode->convertToWorldSpace(m_player->getPosition());
     //CCPoint newPoint = CCDirector::sharedDirector()->convertToUI(playerPosition);
     //CCLog("new point %f %f",newPoint.x, newPoint.y);
     //CCSize size = getTilemapSize();
@@ -301,19 +315,6 @@ CCPoint RCWorldManager::tilePosFromLocation(CCPoint location,CCTMXTiledMap* tile
 
 void RCWorldManager::checkObjectInteract(cocos2d::CCPoint point)
 {
-//    CCTMXObjectGroup *objectLayer = m_map->objectGroupNamed("ObjectLayer");
-//    bool isTouchInRect = false;
-//    for (int i=0; i<objectLayer->getObjects()->count(); i++) {
-//        CCDictionary *dict = (CCDictionary*)objectLayer->getObjects()->objectAtIndex(i);
-//        CCRect rect = getRectFromObjectProperties(dict, m_map);
-//        if (pointIsInRect(point, rect)) {
-//            isTouchInRect = true;
-//            break;
-//        }
-//    }
-//    if (isTouchInRect) {
-//        CCLog("touch in rect");
-//    }
 }
 
 CCRect RCWorldManager::getRectFromObjectProperties(CCDictionary* dict,CCTMXTiledMap*tileMap)
@@ -329,14 +330,17 @@ CCRect RCWorldManager::getRectFromObjectProperties(CCDictionary* dict,CCTMXTiled
 bool RCWorldManager::checkBarrierCollision(cocos2d::CCPoint position)
 {
     bool hasCollision = false;
-    CCPoint tileCoord = tilePosFromLocation(position, m_tileMapeRef);
+    if (!checkPositionInsideTileMap(position)) {
+        return false;
+    }
+    CCPoint tileCoord = tilePosFromLocation(position, m_tileMap);
     int tileID = m_miscLayer->tileGIDAt(tileCoord);
     if (tileID) {
-        CCDictionary *dict = m_tileMapeRef->propertiesForGID(tileID);
+        CCDictionary *dict = m_tileMap->propertiesForGID(tileID);
         if (dict) {
             const CCString *isBlock = dict->valueForKey("block");
             if (isBlock) {
-                CCLog("block tile at %i",tileID);
+             //   CCLog("block tile at %i",tileID);
                 hasCollision = true;
             }
         }
@@ -344,11 +348,11 @@ bool RCWorldManager::checkBarrierCollision(cocos2d::CCPoint position)
 
     tileID = m_landscapeLayer->tileGIDAt(tileCoord);
     if (tileID) {
-        CCDictionary *dict = m_tileMapeRef->propertiesForGID(tileID);
+        CCDictionary *dict = m_tileMap->propertiesForGID(tileID);
         if (dict) {
             const CCString *isBlock = dict->valueForKey("block");
             if (isBlock) {
-                CCLog("block tile at %i",tileID);
+            //    CCLog("block tile at %i",tileID);
                 hasCollision = true;
             }
         }
@@ -356,9 +360,30 @@ bool RCWorldManager::checkBarrierCollision(cocos2d::CCPoint position)
     return hasCollision;
 }
 
+bool RCWorldManager::checkPositionInsideTileMap(cocos2d::CCPoint position)
+{
+    CCSize mapSize = getTilemapSizeInPixels();
+    CCRect mapRect = CCRectMake(kPlayerOnMapEdgeSize.width
+                                , kPlayerOnMapEdgeSize.height
+                                , mapSize.width-kPlayerOnMapEdgeSize.width*2
+                                , mapSize.height - kPlayerOnMapEdgeSize.height*2);
+    if (pointIsInRect(position, mapRect)) {
+        return true;
+    }
+    return false;
+}
+
 CCPoint RCWorldManager::checkBarrierCollisionForOffset(cocos2d::CCPoint offset, RCActor* player)
 {
     CCPoint newOffset = offset;
+    
+    if (offset.x >=0 && offset.y >=0) {
+        
+    }
+    else if(offset.x <0 && offset.y >= 0)
+    {
+    
+    }
     
     if (newOffset.x > 0) {
         bool hasCollision = false;
@@ -384,6 +409,8 @@ CCPoint RCWorldManager::checkBarrierCollisionForOffset(cocos2d::CCPoint offset, 
         bool hasCollision = false;
         CCRect newRect = player->getRect();
         newRect.origin = ccp(offset.x, 0) + newRect.origin;
+
+        
         CCPoint topLeftPoint = ccp(newRect.origin.x, newRect.origin.y + newRect.size.height);
         CCPoint midLeftPoint = ccp(newRect.origin.x, newRect.origin.y + newRect.size.height*0.5f);
         CCPoint bottomLeftPoint = ccp(newRect.origin.x, newRect.origin.y);
@@ -405,6 +432,8 @@ CCPoint RCWorldManager::checkBarrierCollisionForOffset(cocos2d::CCPoint offset, 
         bool hasCollision = false;
         CCRect newRect = player->getRect();
         newRect.origin = ccp(0, offset.y) + newRect.origin;
+        
+
         CCPoint topLeftPoint = ccp(newRect.origin.x, newRect.origin.y + newRect.size.height);
         CCPoint topMidPoint = ccp(newRect.origin.x + newRect.size.width*0.5f, newRect.origin.y + newRect.size.height);
         CCPoint topRightPoint = ccp(newRect.origin.x + newRect.size.width, newRect.origin.y + newRect.size.height);
@@ -446,6 +475,16 @@ CCPoint RCWorldManager::checkBarrierCollisionForOffset(cocos2d::CCPoint offset, 
     }
     
     return newOffset;
+}
+
+void RCWorldManager::setActorPositionOnTile(RCActor *actor, cocos2d::CCDictionary *tileDict)
+{
+    float x, y, width, height;
+    x = tileDict->valueForKey("x")->floatValue();
+    y = tileDict->valueForKey("y")->floatValue();
+    width =  tileDict->valueForKey("width")->floatValue();
+    height =  tileDict->valueForKey("height")->floatValue();
+    actor->setPosition(ccp(x+width/2, y+height/2));
 }
 
 
