@@ -31,6 +31,7 @@ bool RCControllerLayer::init()
     setTouchEnabled(true);
    
     m_dPad = RCDPad::create();
+    m_dPad->setScale(1.5f);
     addChild(m_dPad);
     
     CCSize screenSize = CCDirector::sharedDirector()->getWinSize();
@@ -38,6 +39,7 @@ bool RCControllerLayer::init()
     
     m_buttonA = RCButton::createWithSpriteFrameFile("a_button_up.png", "a_button_down.png");
     addChild(m_buttonA);
+    m_buttonA->setScale(1.5f);
     m_buttonA->setPosition(ccp(screenSize.width*0.8f,screenSize.height*0.2f));
     
     return true;

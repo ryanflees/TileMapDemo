@@ -42,6 +42,8 @@ RCWorldManager::RCWorldManager():m_controllerLayerRef()
         ,m_tileMapeRef()
         ,m_gameNodeRef()
         ,m_delegate()
+        ,m_landscapeLayer()
+        ,m_miscLayer()
 {
 
 }
@@ -134,6 +136,8 @@ void RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, 
     
     CCPoint moveOffset = getPositionOnTheCircle(CCPointZero, m_playerRef->getSpeed(), delAngle);
     moveOffset = ccp(moveOffset.x*delta, moveOffset.y*delta);
+    moveOffset = checkBarrierCollisionForOffset(moveOffset, m_playerRef);
+    
     CCPoint newPos = m_playerRef->getPosition() + moveOffset;
     CCSize mapSize = getTilemapSizeInPixels();
     CCRect mapRect = CCRectMake(kPlayerOnMapEdgeSize.width
@@ -163,8 +167,16 @@ void RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, 
     
     m_playerRef->setPosition(newPos);
     adjustCamera(moveOffset);
+    
 //    if (pointIsInRect(newPos, mapRect)) {
 //    }
+}
+
+void RCWorldManager::setTileMapeRef(cocos2d::CCTMXTiledMap* tileMap)
+{
+    m_tileMapeRef = tileMap;
+    m_landscapeLayer = m_tileMapeRef->layerNamed("LanscapeLayer");
+    m_miscLayer = m_tileMapeRef->layerNamed("MiscLayer");
 }
 
 void RCWorldManager::adjustCamera(CCPoint moveOffset)
@@ -274,5 +286,166 @@ CCSize RCWorldManager::getTilemapSizeInPixels()
 }
 
 
+CCPoint RCWorldManager::tilePosFromLocation(CCPoint location,CCTMXTiledMap* tileMap)
+{
+    // Tilemap position must be offset, in case the tilemap is scrolling CGPoint pos = ccpSub(location, tileMap.position);
+    // Cast to int makes sure that result is in whole numbers
+    CCPoint pos = ccpSub(location, tileMap->getPosition());
+    
+    pos.x = (int)(pos.x / tileMap->getTileSize().width);
+    pos.y = (int)((tileMap->getMapSize().height * tileMap->getTileSize().height - pos.y) /
+                  tileMap->getTileSize().height);
+    //CCLog("touch at (%.0f, %.0f) is at tileCoord (%i, %i)", location.x, location.y,(int)pos.x, (int)pos.y);
+    return pos;
+}
+
+void RCWorldManager::checkObjectInteract(cocos2d::CCPoint point)
+{
+//    CCTMXObjectGroup *objectLayer = m_map->objectGroupNamed("ObjectLayer");
+//    bool isTouchInRect = false;
+//    for (int i=0; i<objectLayer->getObjects()->count(); i++) {
+//        CCDictionary *dict = (CCDictionary*)objectLayer->getObjects()->objectAtIndex(i);
+//        CCRect rect = getRectFromObjectProperties(dict, m_map);
+//        if (pointIsInRect(point, rect)) {
+//            isTouchInRect = true;
+//            break;
+//        }
+//    }
+//    if (isTouchInRect) {
+//        CCLog("touch in rect");
+//    }
+}
+
+CCRect RCWorldManager::getRectFromObjectProperties(CCDictionary* dict,CCTMXTiledMap*tileMap)
+{
+    float x, y, width, height;
+    x = dict->valueForKey("x")->floatValue() + tileMap->getPositionX();
+    y = dict->valueForKey("y")->floatValue() + tileMap->getPositionY();
+    width =  dict->valueForKey("width")->floatValue();
+    height =  dict->valueForKey("height")->floatValue();
+    return CCRectMake(x, y, width, height);
+}
+
+bool RCWorldManager::checkBarrierCollision(cocos2d::CCPoint position)
+{
+    bool hasCollision = false;
+    CCPoint tileCoord = tilePosFromLocation(position, m_tileMapeRef);
+    int tileID = m_miscLayer->tileGIDAt(tileCoord);
+    if (tileID) {
+        CCDictionary *dict = m_tileMapeRef->propertiesForGID(tileID);
+        if (dict) {
+            const CCString *isBlock = dict->valueForKey("block");
+            if (isBlock) {
+                CCLog("block tile at %i",tileID);
+                hasCollision = true;
+            }
+        }
+    }
+
+    tileID = m_landscapeLayer->tileGIDAt(tileCoord);
+    if (tileID) {
+        CCDictionary *dict = m_tileMapeRef->propertiesForGID(tileID);
+        if (dict) {
+            const CCString *isBlock = dict->valueForKey("block");
+            if (isBlock) {
+                CCLog("block tile at %i",tileID);
+                hasCollision = true;
+            }
+        }
+    }
+    return hasCollision;
+}
+
+CCPoint RCWorldManager::checkBarrierCollisionForOffset(cocos2d::CCPoint offset, RCActor* player)
+{
+    CCPoint newOffset = offset;
+    
+    if (newOffset.x > 0) {
+        bool hasCollision = false;
+        CCRect newRect = player->getRect();
+        newRect.origin = ccp(offset.x, 0) +newRect.origin;
+        CCPoint topRightPoint = ccp(newRect.origin.x + newRect.size.width, newRect.origin.y + newRect.size.height);
+        CCPoint midRightPoint = ccp(newRect.origin.x + newRect.size.width, newRect.origin.y + newRect.size.height*0.5f);
+        CCPoint bottomRightPoint = ccp(newRect.origin.x + newRect.size.width, newRect.origin.y);
+        if (checkBarrierCollision(topRightPoint)) {
+            hasCollision = true;
+        }
+        if (checkBarrierCollision(midRightPoint)) {
+            hasCollision = true;
+        }
+        if (checkBarrierCollision(bottomRightPoint)) {
+            hasCollision = true;
+        }
+        if (hasCollision) {
+            newOffset.x = 0;
+        }
+    }
+    if (newOffset.x < 0) {
+        bool hasCollision = false;
+        CCRect newRect = player->getRect();
+        newRect.origin = ccp(offset.x, 0) + newRect.origin;
+        CCPoint topLeftPoint = ccp(newRect.origin.x, newRect.origin.y + newRect.size.height);
+        CCPoint midLeftPoint = ccp(newRect.origin.x, newRect.origin.y + newRect.size.height*0.5f);
+        CCPoint bottomLeftPoint = ccp(newRect.origin.x, newRect.origin.y);
+        if (checkBarrierCollision(topLeftPoint)) {
+            hasCollision = true;
+        }
+        if (checkBarrierCollision(midLeftPoint)) {
+            hasCollision = true;
+        }
+        if (checkBarrierCollision(bottomLeftPoint)) {
+            hasCollision = true;
+        }
+        if (hasCollision) {
+            newOffset.x = 0;
+            newRect.origin = newOffset + player->getPosition();
+        }
+    }
+    if (newOffset.y > 0) {
+        bool hasCollision = false;
+        CCRect newRect = player->getRect();
+        newRect.origin = ccp(0, offset.y) + newRect.origin;
+        CCPoint topLeftPoint = ccp(newRect.origin.x, newRect.origin.y + newRect.size.height);
+        CCPoint topMidPoint = ccp(newRect.origin.x + newRect.size.width*0.5f, newRect.origin.y + newRect.size.height);
+        CCPoint topRightPoint = ccp(newRect.origin.x + newRect.size.width, newRect.origin.y + newRect.size.height);
+        if (checkBarrierCollision(topLeftPoint)) {
+            hasCollision = true;
+        }
+        if (checkBarrierCollision(topMidPoint)) {
+            hasCollision = true;
+        }
+        if (checkBarrierCollision(topRightPoint)) {
+            hasCollision = true;
+        }
+        if (hasCollision) {
+            newOffset.y = 0;
+            newRect.origin = newOffset + player->getPosition();
+        }
+    }
+    
+    if (newOffset.y < 0) {
+        bool hasCollision = false;
+        CCRect newRect = player->getRect();
+        newRect.origin = ccp(0, offset.y) + newRect.origin;
+        CCPoint bottomLeftPoint = ccp(newRect.origin.x, newRect.origin.y);
+        CCPoint bottomMidPoint = ccp(newRect.origin.x + newRect.size.width*0.5f, newRect.origin.y);
+        CCPoint bottomRightPoint = ccp(newRect.origin.x + newRect.size.width, newRect.origin.y);
+        if (checkBarrierCollision(bottomLeftPoint)) {
+            hasCollision = true;
+        }
+        if (checkBarrierCollision(bottomMidPoint)) {
+            hasCollision = true;
+        }
+        if (checkBarrierCollision(bottomRightPoint)) {
+            hasCollision = true;
+        }
+        if (hasCollision) {
+            newOffset.y = 0;
+            newRect.origin = newOffset + player->getPosition();
+        }
+    }
+    
+    return newOffset;
+}
 
 

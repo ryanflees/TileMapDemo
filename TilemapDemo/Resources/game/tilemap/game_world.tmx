@@ -8,12 +8,192 @@
  </tileset>
  <tileset firstgid="1729" name="Exterior_Forest_TileA5" tilewidth="16" tileheight="16">
   <image source="../DSMaterials/Graphics/Tilesets/A5/Exterior_Forest_TileA5.png" width="256" height="512"/>
+  <tile id="128">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="129">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="130">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="131">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="132">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="133">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="144">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="145">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="146">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="147">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="148">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="149">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="160">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="161">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="164">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="165">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="176">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="177">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="180">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="181">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="192">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="193">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="194">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="195">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="196">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="197">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="208">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="209">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="210">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="211">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="212">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="213">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
  </tileset>
  <tileset firstgid="2241" name="Exterior_Forest_TileB" tilewidth="16" tileheight="16">
   <image source="../DSMaterials/Graphics/Tilesets/B/Exterior_Forest_TileB.png" width="512" height="512"/>
  </tileset>
  <tileset firstgid="3265" name="Exterior_Forest_TileC" tilewidth="16" tileheight="16">
   <image source="../DSMaterials/Graphics/Tilesets/C/Exterior_Forest_TileC.png" width="512" height="512"/>
+  <tile id="848">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="849">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="880">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
+  <tile id="881">
+   <properties>
+    <property name="block" value="1"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="BackgroundLayer" width="64" height="64">
   <data encoding="base64" compression="gzip">
@@ -35,4 +215,7 @@
    H4sIAAAAAAAAA+3UzREBQRAG0M5gl0xIhUxIhEzIZJGInwD00UnNUkwN753m0NPV3+WLAAAAAAAAAAAAAAD+2aaL2Ha1r3jfkBkOBTmOOXN6mNvle//kX+ne2s5546XgzmvO3EbkKd0LrVr0Ecu+9hX1rDL7usH8rXTzp+hmeM0k+246svN+qW9mmX0+Mr++AYDvuwOIIcwUAEAAAA==
   </data>
  </layer>
+ <objectgroup name="ObjectLayer" width="64" height="64">
+  <object x="304" y="881" width="31" height="31"/>
+ </objectgroup>
 </map>

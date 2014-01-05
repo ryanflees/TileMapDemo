@@ -316,8 +316,6 @@
 		6B384DE21866DA2800830047 /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B384DE11866DA2800830047 /* menu2.png */; };
 		6B384DE41866DA2800830047 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B384DE31866DA2800830047 /* background.mp3 */; };
 		6B384DE61866DA2800830047 /* effect1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B384DE51866DA2800830047 /* effect1.wav */; };
-		6B4BCF5C186B1DD2001C4067 /* WorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6B4BCF5A186B1DD2001C4067 /* WorldScene.cpp */; };
-		6BAD2E581869C96D00B382EF /* TileMapScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD2E561869C96D00B382EF /* TileMapScene.cpp */; };
 		6BBAE9051871BB0000A3B6D2 /* dpad_buttons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAE9031871BB0000A3B6D2 /* dpad_buttons.plist */; };
 		6BBAE9061871BB0000A3B6D2 /* dpad_buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAE9041871BB0000A3B6D2 /* dpad_buttons.png */; };
 		6BBAE90A1871BB4B00A3B6D2 /* RCGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9081871BB4B00A3B6D2 /* RCGameScene.cpp */; };
@@ -983,10 +981,6 @@
 		6B384DE11866DA2800830047 /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu2.png; path = Resources/menu2.png; sourceTree = "<group>"; };
 		6B384DE31866DA2800830047 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = Resources/background.mp3; sourceTree = "<group>"; };
 		6B384DE51866DA2800830047 /* effect1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = effect1.wav; path = Resources/effect1.wav; sourceTree = "<group>"; };
-		6B4BCF5A186B1DD2001C4067 /* WorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WorldScene.cpp; sourceTree = "<group>"; };
-		6B4BCF5B186B1DD2001C4067 /* WorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldScene.h; sourceTree = "<group>"; };
-		6BAD2E561869C96D00B382EF /* TileMapScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileMapScene.cpp; sourceTree = "<group>"; };
-		6BAD2E571869C96D00B382EF /* TileMapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMapScene.h; sourceTree = "<group>"; };
 		6BBAE9031871BB0000A3B6D2 /* dpad_buttons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dpad_buttons.plist; sourceTree = "<group>"; };
 		6BBAE9041871BB0000A3B6D2 /* dpad_buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad_buttons.png; sourceTree = "<group>"; };
 		6BBAE9081871BB4B00A3B6D2 /* RCGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCGameScene.cpp; path = Classes/RCGameScene.cpp; sourceTree = "<group>"; };
@@ -2461,10 +2455,6 @@
 				04A6BB29187178AA0094B6F1 /* RCController */,
 				6B384DD01866DA2800830047 /* AppDelegate.h */,
 				6B384DD11866DA2800830047 /* AppDelegate.cpp */,
-				6B4BCF5A186B1DD2001C4067 /* WorldScene.cpp */,
-				6B4BCF5B186B1DD2001C4067 /* WorldScene.h */,
-				6BAD2E561869C96D00B382EF /* TileMapScene.cpp */,
-				6BAD2E571869C96D00B382EF /* TileMapScene.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2718,7 +2708,6 @@
 				0418635F186BE4F500E01A3D /* CCIMEDispatcher.cpp in Sources */,
 				04186390186BE4F500E01A3D /* CCInputDelegate.cpp in Sources */,
 				041863B0186BE4F500E01A3D /* Atlas.cpp in Sources */,
-				6BAD2E581869C96D00B382EF /* TileMapScene.cpp in Sources */,
 				04186322186BE4F500E01A3D /* CCTransitionPageTurn.cpp in Sources */,
 				04B1DD201872700A00F062D6 /* RCMiniMap.cpp in Sources */,
 				041863A2186BE4F500E01A3D /* CCEditBoxImplWin.cpp in Sources */,
@@ -2769,7 +2758,6 @@
 				0418631D186BE4F500E01A3D /* CCLabelBMFont.cpp in Sources */,
 				6BBAE9171871BBEF00A3B6D2 /* RCActorTemplateCache.cpp in Sources */,
 				04186323186BE4F500E01A3D /* CCTransitionProgress.cpp in Sources */,
-				6B4BCF5C186B1DD2001C4067 /* WorldScene.cpp in Sources */,
 				04186382186BE4F500E01A3D /* CCLayerGradientLoader.cpp in Sources */,
 				0418630B186BE4F500E01A3D /* aabb.c in Sources */,
 				041862EC186BE4F500E01A3D /* CCActionGrid3D.cpp in Sources */,

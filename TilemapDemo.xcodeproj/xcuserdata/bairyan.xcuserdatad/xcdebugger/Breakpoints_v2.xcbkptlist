@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TilemapDemo/Classes/RCWorldManager.cpp"
-            timestampString = "410256816.342142"
+            timestampString = "410583189.800691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "RCWorldManager::adjustCamera(CCPoint moveOffset)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,12 +74,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TilemapDemo/Classes/RCWorldManager.cpp"
-            timestampString = "410256888.303832"
+            timestampString = "410583189.800691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, cocos2d::CCPoint pressedVector,float delta)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TilemapDemo/Classes/RCWorldManager.cpp"
+            timestampString = "410584337.381926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
+            landmarkName = "RCWorldManager::checkBarrierCollisionForOffset(cocos2d::CCPoint offset, RCActor* player)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TilemapDemo/Classes/RCWorldManager.cpp"
+            timestampString = "410584337.381926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "384"
+            endingLineNumber = "384"
+            landmarkName = "RCWorldManager::checkBarrierCollisionForOffset(cocos2d::CCPoint offset, RCActor* player)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TilemapDemo/Classes/RCWorldManager.cpp"
+            timestampString = "410584337.381926"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "367"
+            endingLineNumber = "367"
+            landmarkName = "RCWorldManager::checkBarrierCollisionForOffset(cocos2d::CCPoint offset, RCActor* player)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

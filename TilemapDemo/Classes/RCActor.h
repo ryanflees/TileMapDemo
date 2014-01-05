@@ -30,6 +30,8 @@ public:
     virtual void onExit();
     virtual void update(float delta);
     
+    cocos2d::CCRect getRect();
+    
 private:
     CC_SYNTHESIZE(float, m_speed, Speed);
     CC_SYNTHESIZE_READONLY(string, m_curActionKey, CurActionKey);

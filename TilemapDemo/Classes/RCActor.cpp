@@ -131,5 +131,13 @@ void RCActor::displayFrameByDict(cocos2d::CCDictionary *frameDict)
     setDisplayFrame(frame);
 }
 
+CCRect RCActor::getRect()
+{
+    CCSize size = getContentSize();
+    float x = getPositionX()-size.width*getAnchorPoint().x;
+    float y = getPositionY()-size.height*getAnchorPoint().y;
+    return CCRectMake(x, y, size.width, size.height);
+}
+
 
 
