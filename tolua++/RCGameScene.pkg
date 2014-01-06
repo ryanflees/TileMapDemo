@@ -1,0 +1,4 @@
+class RCGameScene : public CCLayer
+{
+    static CCScene *scene();
+};

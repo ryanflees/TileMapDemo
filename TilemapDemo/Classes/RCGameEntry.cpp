@@ -10,6 +10,7 @@
 #include "script_support/CCScriptSupport.h"
 #include "CCLuaEngine.h"
 
+using namespace std;
 USING_NS_CC;
 
 RCGameEntry* RCGameEntry::m_instanceOfGameEntry = NULL;
@@ -41,7 +42,8 @@ void RCGameEntry::loadScript(const char* luaScriptPath)
 {
     CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
-    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename(luaScriptPath);
+    string path = CCFileUtils::sharedFileUtils()->fullPathForFilename(luaScriptPath);
+    pEngine->executeScriptFile(path.c_str());
 }
 
 

@@ -1,0 +1,17 @@
+
+class CCTouch : public CCObject
+{
+    unsigned int getHashKey() const;
+   	CCPoint getLocation() const;
+    CCPoint getPreviousLocation() const;
+    CCPoint getDelta() const;
+    CCPoint getLocationInView() const;
+    CCPoint getPreviousLocationInView() const;
+
+	void setTouchInfo(int id, float x, float y, unsigned int hashKey);
+    int getID();
+};
+
+class CCEvent : public CCObject
+{
+};
