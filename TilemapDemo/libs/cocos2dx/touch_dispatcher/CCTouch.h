@@ -43,6 +43,8 @@ public:
         m_startPointCaptured(false)
     {}
 
+    /** returns the hash key of iOS UITouch */
+    unsigned int getHashKey() const;
     /** returns the current touch location in OpenGL coordinates */
     CCPoint getLocation() const;
     /** returns the previous touch location in OpenGL coordinates */
@@ -58,9 +60,10 @@ public:
     /** returns the start touch location in screen coordinates */
     CCPoint getStartLocationInView() const;
     
-    void setTouchInfo(int id, float x, float y)
+    void setTouchInfo(int id, float x, float y, unsigned int hashKey)
     {
         m_nId = id;
+        m_hashKey = hashKey;
         m_prevPoint = m_point;
         m_point.x   = x;
         m_point.y   = y;
@@ -78,6 +81,7 @@ public:
 
 private:
     int m_nId;
+    unsigned int m_hashKey;
     bool m_startPointCaptured;
     CCPoint m_startPoint;
     CCPoint m_point;

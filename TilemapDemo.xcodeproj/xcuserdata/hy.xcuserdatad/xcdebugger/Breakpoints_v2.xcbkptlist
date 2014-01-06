@@ -124,7 +124,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
-            endingLineNumber = "59">
+            endingLineNumber = "59"
+            landmarkName = "RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, cocos2d::CCPoint pressedVector,float delta)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -235,7 +237,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
-            landmarkName = "RCWorldManager::setPlayerRef(RCActor *player)"
+            landmarkName = "RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, cocos2d::CCPoint pressedVector,float delta)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -253,6 +255,22 @@
             endingLineNumber = "64"
             landmarkName = "RCWorldManager::updateControllerVector(RCControllerLayer* controllerLayer, cocos2d::CCPoint pressedVector,float delta)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TilemapDemo/libs/lua/cocos2dx_support/LuaCocos2d.cpp"
+            timestampString = "410683565.585824"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54131"
+            endingLineNumber = "54131"
+            landmarkName = "tolua_Cocos2d_CCTouch_setTouchInfo00(lua_State* tolua_S)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

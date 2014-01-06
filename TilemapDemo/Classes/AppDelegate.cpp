@@ -3,9 +3,8 @@
 #include "SimpleAudioEngine.h"
 #include "script_support/CCScriptSupport.h"
 #include "CCLuaEngine.h"
-//#include "TileMapScene.h"
-//#include "WorldScene.h"
-#include "RCGameScene.h"
+//#include "RCGameScene.h"
+#include "RCGameEntry.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -42,15 +41,15 @@ bool AppDelegate::applicationDidFinishLaunching()
    // CCEGLView::sharedOpenGLView()->setDesignResolutionSize(screenSize.width, screenSize.height, kResolutionExactFit);
     
     // register lua engine
-    CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
-    CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
-
-    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("hello.lua");
+//    CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
+//    CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
+//
+//    std::string path = CCFileUtils::sharedFileUtils()->fullPathForFilename("hello.lua");
     //pEngine->executeScriptFile(path.c_str());
 
-    //CCScene* scene = TileMapeScene::scene();
-    CCScene* scene = RCGameScene::scene();
-    CCDirector::sharedDirector()->runWithScene(scene);
+//    CCScene* scene = RCGameScene::scene();
+//    CCDirector::sharedDirector()->runWithScene(scene);
+    RCGameEntry::sharedGameEntry()->loadScript("GameScene.lua");
     
     return true;
 }

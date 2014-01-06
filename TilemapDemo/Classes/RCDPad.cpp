@@ -43,7 +43,7 @@ void RCDPad::onExit()
 bool RCDPad::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
     CCPoint touchPoint = pTouch->getLocation();
-    if (pointIsInCircle(touchPoint, getPosition(), rect().size.width/2)) {
+   if (pointIsInCircle(touchPoint, getPosition(), rect().size.width/2)) {
         processTouch(touchPoint);
         return true;
     }

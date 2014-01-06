@@ -283,6 +283,8 @@
 		04B1DD181872556200F062D6 /* RCStringHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 04B1DD161872556200F062D6 /* RCStringHelper.mm */; };
 		04B1DD1D18726FF500F062D6 /* RCWorldManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04B1DD1B18726FF500F062D6 /* RCWorldManager.cpp */; };
 		04B1DD201872700A00F062D6 /* RCMiniMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04B1DD1E1872700A00F062D6 /* RCMiniMap.cpp */; };
+		04C1D015187AD5BB002BEFA2 /* RCGameEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04C1D013187AD5BB002BEFA2 /* RCGameEntry.cpp */; };
+		04C1D018187AE10D002BEFA2 /* GameScene.lua in Resources */ = {isa = PBXBuildFile; fileRef = 04C1D017187AE10D002BEFA2 /* GameScene.lua */; };
 		6B3849EF1866DA2000830047 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849EE1866DA2000830047 /* QuartzCore.framework */; };
 		6B3849F11866DA2000830047 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849F01866DA2000830047 /* OpenGLES.framework */; };
 		6B3849F31866DA2000830047 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3849F21866DA2000830047 /* OpenAL.framework */; };
@@ -942,6 +944,9 @@
 		04B1DD1C18726FF500F062D6 /* RCWorldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCWorldManager.h; path = Classes/RCWorldManager.h; sourceTree = "<group>"; };
 		04B1DD1E1872700A00F062D6 /* RCMiniMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCMiniMap.cpp; path = Classes/RCMiniMap.cpp; sourceTree = "<group>"; };
 		04B1DD1F1872700A00F062D6 /* RCMiniMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCMiniMap.h; path = Classes/RCMiniMap.h; sourceTree = "<group>"; };
+		04C1D013187AD5BB002BEFA2 /* RCGameEntry.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCGameEntry.cpp; path = Classes/RCGameEntry.cpp; sourceTree = "<group>"; };
+		04C1D014187AD5BB002BEFA2 /* RCGameEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCGameEntry.h; path = Classes/RCGameEntry.h; sourceTree = "<group>"; };
+		04C1D017187AE10D002BEFA2 /* GameScene.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = GameScene.lua; path = lua/GameScene.lua; sourceTree = "<group>"; };
 		6B3849EB1866DA2000830047 /* TilemapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TilemapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B3849EE1866DA2000830047 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6B3849F01866DA2000830047 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -2266,7 +2271,8 @@
 				04A6BB30187178ED0094B6F1 /* UI */,
 				04A6BB2F187178E40094B6F1 /* LoadingScene */,
 				04A6BB2E187178DE0094B6F1 /* MainMenu */,
-				04A6BB2D187178D10094B6F1 /* Game */,
+				04A6BB2D187178D10094B6F1 /* GameScene */,
+				04A6BB2C187178CA0094B6F1 /* TileMap */,
 			);
 			name = RCScene;
 			sourceTree = "<group>";
@@ -2282,14 +2288,13 @@
 			name = TileMap;
 			sourceTree = "<group>";
 		};
-		04A6BB2D187178D10094B6F1 /* Game */ = {
+		04A6BB2D187178D10094B6F1 /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
-				04A6BB2C187178CA0094B6F1 /* TileMap */,
 				6BBAE9081871BB4B00A3B6D2 /* RCGameScene.cpp */,
 				6BBAE9091871BB4B00A3B6D2 /* RCGameScene.h */,
 			);
-			name = Game;
+			name = GameScene;
 			sourceTree = "<group>";
 		};
 		04A6BB2E187178DE0094B6F1 /* MainMenu */ = {
@@ -2347,6 +2352,23 @@
 			children = (
 			);
 			name = RCAudio;
+			sourceTree = "<group>";
+		};
+		04C1D011187AD14B002BEFA2 /* RCGame */ = {
+			isa = PBXGroup;
+			children = (
+				04C1D013187AD5BB002BEFA2 /* RCGameEntry.cpp */,
+				04C1D014187AD5BB002BEFA2 /* RCGameEntry.h */,
+			);
+			name = RCGame;
+			sourceTree = "<group>";
+		};
+		04C1D012187AD53F002BEFA2 /* Lua */ = {
+			isa = PBXGroup;
+			children = (
+				04C1D017187AE10D002BEFA2 /* GameScene.lua */,
+			);
+			name = Lua;
 			sourceTree = "<group>";
 		};
 		6B3849E21866DA2000830047 = {
@@ -2447,6 +2469,8 @@
 		6B384DCF1866DA2800830047 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				04C1D012187AD53F002BEFA2 /* Lua */,
+				04C1D011187AD14B002BEFA2 /* RCGame */,
 				6BBAE92218740C0100A3B6D2 /* RCNetwork */,
 				04B1DD1A18726A9500F062D6 /* RCAudio */,
 				04A6BB321871792C0094B6F1 /* RCSprite */,
@@ -2567,6 +2591,7 @@
 				041862C6186BE4F500E01A3D /* chipmunk-docs.html in Resources */,
 				6B384A011866DA2000830047 /* CloseNormal.png in Resources */,
 				6B384DE41866DA2800830047 /* background.mp3 in Resources */,
+				04C1D018187AE10D002BEFA2 /* GameScene.lua in Resources */,
 				0418630C186BE4F500E01A3D /* ChangeLog in Resources */,
 				6B384A0D1866DA2000830047 /* Icon-Small.png in Resources */,
 				6B384A091866DA2000830047 /* Icon-72.png in Resources */,
@@ -2669,6 +2694,7 @@
 				041863B2186BE4F500E01A3D /* Attachment.cpp in Sources */,
 				041862F2186BE4F500E01A3D /* CCActionTiledGrid.cpp in Sources */,
 				04186353186BE4F500E01A3D /* ccUtils.cpp in Sources */,
+				04C1D015187AD5BB002BEFA2 /* RCGameEntry.cpp in Sources */,
 				041863BB186BE4F500E01A3D /* Skeleton.cpp in Sources */,
 				041863AF186BE4F500E01A3D /* AnimationStateData.cpp in Sources */,
 				0418636E186BE4F500E01A3D /* CCTouchHandler.cpp in Sources */,

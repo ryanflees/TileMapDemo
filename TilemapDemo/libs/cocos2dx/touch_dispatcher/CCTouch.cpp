@@ -46,6 +46,11 @@ CCPoint CCTouch::getStartLocationInView() const
     return m_startPoint; 
 }
 
+unsigned int CCTouch::getHashKey() const
+{
+    return m_hashKey;
+}
+
 // returns the current touch location in OpenGL coordinates
 CCPoint CCTouch::getLocation() const
 { 

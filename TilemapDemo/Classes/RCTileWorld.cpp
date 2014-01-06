@@ -139,7 +139,6 @@ void RCTileWorld::update(float delta)
         CCNode *node = (CCNode*)object;
         int zorder = mapSize.height - node->getPositionY();
         node->setZOrder(zorder);
-      //  m_actorNode->reorderChild(node, zorder);
     }
 }
 

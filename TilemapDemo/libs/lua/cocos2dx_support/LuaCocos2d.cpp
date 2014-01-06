@@ -53874,44 +53874,47 @@ static int tolua_Cocos2d_CCTMXMapInfo_formatWithXML00(lua_State* tolua_S)
 }
 #endif //#ifndef TOLUA_DISABLE
 
+
+
+
 /* method: getLocation of class  CCTouch */
 #ifndef TOLUA_DISABLE_tolua_Cocos2d_CCTouch_getLocation00
 static int tolua_Cocos2d_CCTouch_getLocation00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
+    tolua_Error tolua_err;
+    if (
+        !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
+        !tolua_isnoobj(tolua_S,2,&tolua_err)
+        )
+        goto tolua_lerror;
+    else
 #endif
- {
-  const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
+    {
+        const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getLocation'", NULL);
+        if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getLocation'", NULL);
 #endif
-  {
-   CCPoint tolua_ret = (CCPoint)  self->getLocation();
-   {
+        {
+            CCPoint tolua_ret = (CCPoint)  self->getLocation();
+            {
 #ifdef __cplusplus
-    void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #else
-    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #endif
-   }
-  }
- }
- return 1;
+            }
+        }
+    }
+    return 1;
 #ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getLocation'.",&tolua_err);
- return 0;
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'getLocation'.",&tolua_err);
+    return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
@@ -53921,39 +53924,39 @@ static int tolua_Cocos2d_CCTouch_getLocation00(lua_State* tolua_S)
 static int tolua_Cocos2d_CCTouch_getPreviousLocation00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
+    tolua_Error tolua_err;
+    if (
+        !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
+        !tolua_isnoobj(tolua_S,2,&tolua_err)
+        )
+        goto tolua_lerror;
+    else
 #endif
- {
-  const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
+    {
+        const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getPreviousLocation'", NULL);
+        if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getPreviousLocation'", NULL);
 #endif
-  {
-   CCPoint tolua_ret = (CCPoint)  self->getPreviousLocation();
-   {
+        {
+            CCPoint tolua_ret = (CCPoint)  self->getPreviousLocation();
+            {
 #ifdef __cplusplus
-    void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #else
-    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #endif
-   }
-  }
- }
- return 1;
+            }
+        }
+    }
+    return 1;
 #ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getPreviousLocation'.",&tolua_err);
- return 0;
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'getPreviousLocation'.",&tolua_err);
+    return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
@@ -53963,39 +53966,39 @@ static int tolua_Cocos2d_CCTouch_getPreviousLocation00(lua_State* tolua_S)
 static int tolua_Cocos2d_CCTouch_getDelta00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
+    tolua_Error tolua_err;
+    if (
+        !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
+        !tolua_isnoobj(tolua_S,2,&tolua_err)
+        )
+        goto tolua_lerror;
+    else
 #endif
- {
-  const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
+    {
+        const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getDelta'", NULL);
+        if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getDelta'", NULL);
 #endif
-  {
-   CCPoint tolua_ret = (CCPoint)  self->getDelta();
-   {
+        {
+            CCPoint tolua_ret = (CCPoint)  self->getDelta();
+            {
 #ifdef __cplusplus
-    void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #else
-    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #endif
-   }
-  }
- }
- return 1;
+            }
+        }
+    }
+    return 1;
 #ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getDelta'.",&tolua_err);
- return 0;
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'getDelta'.",&tolua_err);
+    return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
@@ -54005,39 +54008,39 @@ static int tolua_Cocos2d_CCTouch_getDelta00(lua_State* tolua_S)
 static int tolua_Cocos2d_CCTouch_getLocationInView00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
+    tolua_Error tolua_err;
+    if (
+        !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
+        !tolua_isnoobj(tolua_S,2,&tolua_err)
+        )
+        goto tolua_lerror;
+    else
 #endif
- {
-  const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
+    {
+        const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getLocationInView'", NULL);
+        if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getLocationInView'", NULL);
 #endif
-  {
-   CCPoint tolua_ret = (CCPoint)  self->getLocationInView();
-   {
+        {
+            CCPoint tolua_ret = (CCPoint)  self->getLocationInView();
+            {
 #ifdef __cplusplus
-    void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #else
-    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #endif
-   }
-  }
- }
- return 1;
+            }
+        }
+    }
+    return 1;
 #ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getLocationInView'.",&tolua_err);
- return 0;
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'getLocationInView'.",&tolua_err);
+    return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
@@ -54047,39 +54050,71 @@ static int tolua_Cocos2d_CCTouch_getLocationInView00(lua_State* tolua_S)
 static int tolua_Cocos2d_CCTouch_getPreviousLocationInView00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
+    tolua_Error tolua_err;
+    if (
+        !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
+        !tolua_isnoobj(tolua_S,2,&tolua_err)
+        )
+        goto tolua_lerror;
+    else
 #endif
- {
-  const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
+    {
+        const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getPreviousLocationInView'", NULL);
+        if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getPreviousLocationInView'", NULL);
 #endif
-  {
-   CCPoint tolua_ret = (CCPoint)  self->getPreviousLocationInView();
-   {
+        {
+            CCPoint tolua_ret = (CCPoint)  self->getPreviousLocationInView();
+            {
 #ifdef __cplusplus
-    void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = Mtolua_new((CCPoint)(tolua_ret));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #else
-    void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
-     tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
-    tolua_register_gc(tolua_S,lua_gettop(tolua_S));
+                void* tolua_obj = tolua_copy(tolua_S,(void*)&tolua_ret,sizeof(CCPoint));
+                tolua_pushusertype(tolua_S,tolua_obj,"CCPoint");
+                tolua_register_gc(tolua_S,lua_gettop(tolua_S));
 #endif
-   }
-  }
- }
- return 1;
+            }
+        }
+    }
+    return 1;
 #ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getPreviousLocationInView'.",&tolua_err);
- return 0;
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'getPreviousLocationInView'.",&tolua_err);
+    return 0;
+#endif
+}
+#endif //#ifndef TOLUA_DISABLE
+
+/* method: getHashKey of class  CCTouch */
+#ifndef TOLUA_DISABLE_tolua_Cocos2d_CCTouch_getHashKey00
+static int tolua_Cocos2d_CCTouch_getHashKey00(lua_State* tolua_S)
+{
+#ifndef TOLUA_RELEASE
+    tolua_Error tolua_err;
+    if (
+        !tolua_isusertype(tolua_S,1,"const CCTouch",0,&tolua_err) ||
+        !tolua_isnoobj(tolua_S,2,&tolua_err)
+        )
+        goto tolua_lerror;
+    else
+#endif
+    {
+        const CCTouch* self = (const CCTouch*)  tolua_tousertype(tolua_S,1,0);
+#ifndef TOLUA_RELEASE
+        if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getHashKey'", NULL);
+#endif
+        {
+            unsigned int tolua_ret = (unsigned int)  self->getHashKey();
+            tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+        }
+    }
+    return 1;
+#ifndef TOLUA_RELEASE
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'getHashKey'.",&tolua_err);
+    return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
@@ -54089,34 +54124,36 @@ static int tolua_Cocos2d_CCTouch_getPreviousLocationInView00(lua_State* tolua_S)
 static int tolua_Cocos2d_CCTouch_setTouchInfo00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCTouch",0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
-     !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,5,&tolua_err)
- )
-  goto tolua_lerror;
- else
+    tolua_Error tolua_err;
+    if (
+        !tolua_isusertype(tolua_S,1,"CCTouch",0,&tolua_err) ||
+        !tolua_isnumber(tolua_S,2,0,&tolua_err) ||
+        !tolua_isnumber(tolua_S,3,0,&tolua_err) ||
+        !tolua_isnumber(tolua_S,4,0,&tolua_err) ||
+        !tolua_isnumber(tolua_S,5,0,&tolua_err) ||
+        !tolua_isnoobj(tolua_S,6,&tolua_err)
+        )
+        goto tolua_lerror;
+    else
 #endif
- {
-  CCTouch* self = (CCTouch*)  tolua_tousertype(tolua_S,1,0);
-  int id = ((int)  tolua_tonumber(tolua_S,2,0));
-  float x = ((float)  tolua_tonumber(tolua_S,3,0));
-  float y = ((float)  tolua_tonumber(tolua_S,4,0));
+    {
+        CCTouch* self = (CCTouch*)  tolua_tousertype(tolua_S,1,0);
+        int id = ((int)  tolua_tonumber(tolua_S,2,0));
+        float x = ((float)  tolua_tonumber(tolua_S,3,0));
+        float y = ((float)  tolua_tonumber(tolua_S,4,0));
+        unsigned hashKey = ((unsigned)  tolua_tonumber(tolua_S,5,0));
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setTouchInfo'", NULL);
+        if (!self) tolua_error(tolua_S,"invalid 'self' in function 'setTouchInfo'", NULL);
 #endif
-  {
-   self->setTouchInfo(id,x,y);
-  }
- }
- return 0;
+        {
+            self->setTouchInfo(id,x,y,hashKey);
+        }
+    }
+    return 0;
 #ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'setTouchInfo'.",&tolua_err);
- return 0;
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'setTouchInfo'.",&tolua_err);
+    return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
@@ -54126,32 +54163,34 @@ static int tolua_Cocos2d_CCTouch_setTouchInfo00(lua_State* tolua_S)
 static int tolua_Cocos2d_CCTouch_getID00(lua_State* tolua_S)
 {
 #ifndef TOLUA_RELEASE
- tolua_Error tolua_err;
- if (
-     !tolua_isusertype(tolua_S,1,"CCTouch",0,&tolua_err) ||
-     !tolua_isnoobj(tolua_S,2,&tolua_err)
- )
-  goto tolua_lerror;
- else
+    tolua_Error tolua_err;
+    if (
+        !tolua_isusertype(tolua_S,1,"CCTouch",0,&tolua_err) ||
+        !tolua_isnoobj(tolua_S,2,&tolua_err)
+        )
+        goto tolua_lerror;
+    else
 #endif
- {
-  CCTouch* self = (CCTouch*)  tolua_tousertype(tolua_S,1,0);
+    {
+        CCTouch* self = (CCTouch*)  tolua_tousertype(tolua_S,1,0);
 #ifndef TOLUA_RELEASE
-  if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getID'", NULL);
+        if (!self) tolua_error(tolua_S,"invalid 'self' in function 'getID'", NULL);
 #endif
-  {
-   int tolua_ret = (int)  self->getID();
-   tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
-  }
- }
- return 1;
+        {
+            int tolua_ret = (int)  self->getID();
+            tolua_pushnumber(tolua_S,(lua_Number)tolua_ret);
+        }
+    }
+    return 1;
 #ifndef TOLUA_RELEASE
- tolua_lerror:
- tolua_error(tolua_S,"#ferror in function 'getID'.",&tolua_err);
- return 0;
+tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'getID'.",&tolua_err);
+    return 0;
 #endif
 }
 #endif //#ifndef TOLUA_DISABLE
+
+
 
 /* method: copy of class  CCSet */
 #ifndef TOLUA_DISABLE_tolua_Cocos2d_CCSet_copy00
