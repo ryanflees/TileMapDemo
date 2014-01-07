@@ -9,6 +9,7 @@
 #include "RCGameEntry.h"
 #include "script_support/CCScriptSupport.h"
 #include "CCLuaEngine.h"
+#include "Lua_extensions_CCB.h"
 
 using namespace std;
 USING_NS_CC;
@@ -42,6 +43,7 @@ void RCGameEntry::loadScript(const char* luaScriptPath)
 {
     CCLuaEngine* pEngine = CCLuaEngine::defaultEngine();
     CCScriptEngineManager::sharedManager()->setScriptEngine(pEngine);
+    tolua_extensions_ccb_open(pEngine->getLuaStack()->getLuaState());
     string path = CCFileUtils::sharedFileUtils()->fullPathForFilename(luaScriptPath);
     pEngine->executeScriptFile(path.c_str());
 }

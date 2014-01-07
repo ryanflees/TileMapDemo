@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>Darkone0-00.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {264, 348}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {264, 348}}</string>
+			<key>sourceSize</key>
+			<string>{264, 348}</string>
+		</dict>
+		<key>Darkone0-01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{266, 1}, {264, 348}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {264, 348}}</string>
+			<key>sourceSize</key>
+			<string>{264, 348}</string>
+		</dict>
+		<key>Darkone0-02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{531, 1}, {264, 348}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {264, 348}}</string>
+			<key>sourceSize</key>
+			<string>{264, 348}</string>
+		</dict>
+		<key>Darkone1-00.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{760, 350}, {252, 242}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{1, 1}, {250, 241}}</string>
+			<key>sourceSize</key>
+			<string>{252, 242}</string>
+		</dict>
+		<key>Darkone1-01.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 350}, {252, 242}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {250, 242}}</string>
+			<key>sourceSize</key>
+			<string>{252, 242}</string>
+		</dict>
+		<key>Darkone1-02.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{507, 350}, {252, 242}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {250, 242}}</string>
+			<key>sourceSize</key>
+			<string>{252, 242}</string>
+		</dict>
+		<key>Darkone1-10.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 593}, {252, 242}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {250, 242}}</string>
+			<key>sourceSize</key>
+			<string>{252, 242}</string>
+		</dict>
+		<key>Darkone1-11.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{254, 350}, {252, 242}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{5, 0}, {246, 242}}</string>
+			<key>sourceSize</key>
+			<string>{252, 242}</string>
+		</dict>
+		<key>Darkone1-12.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{254, 593}, {252, 242}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{5, 0}, {246, 242}}</string>
+			<key>sourceSize</key>
+			<string>{252, 242}</string>
+		</dict>
+		<key>GOLD.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{630, 593}, {100, 38}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 1}, {99, 34}}</string>
+			<key>sourceSize</key>
+			<string>{100, 38}</string>
+		</dict>
+		<key>comingsoon.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{507, 593}, {122, 66}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {122, 65}}</string>
+			<key>sourceSize</key>
+			<string>{122, 66}</string>
+		</dict>
+		<key>fast-CD.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{100, 836}, {98, 94}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {98, 92}}</string>
+			<key>sourceSize</key>
+			<string>{98, 94}</string>
+		</dict>
+		<key>fast-CD2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 836}, {98, 94}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 1}, {98, 92}}</string>
+			<key>sourceSize</key>
+			<string>{98, 94}</string>
+		</dict>
+		<key>st.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{731, 593}, {98, 108}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {97, 108}}</string>
+			<key>sourceSize</key>
+			<string>{98, 108}</string>
+		</dict>
+		<key>st2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{830, 593}, {98, 108}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {97, 108}}</string>
+			<key>sourceSize</key>
+			<string>{98, 108}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+	</dict>
+</dict>
+</plist>

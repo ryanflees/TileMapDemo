@@ -5,6 +5,7 @@
 #include "CCLuaEngine.h"
 //#include "RCGameScene.h"
 #include "RCGameEntry.h"
+#include "RCMainMenu.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -49,7 +50,15 @@ bool AppDelegate::applicationDidFinishLaunching()
 
 //    CCScene* scene = RCGameScene::scene();
 //    CCDirector::sharedDirector()->runWithScene(scene);
-    RCGameEntry::sharedGameEntry()->loadScript("GameScene.lua");
+    //RCGameEntry::sharedGameEntry()->loadScript("GameScene.lua");
+
+    RCGameEntry::sharedGameEntry()->loadScript("MainMenu.lua");
+
+    
+    //    RCMainMenu *layer = RCMainMenu::create();
+//    CCScene *scene = CCScene::create();
+//    scene->addChild(layer);
+//    CCDirector::sharedDirector()->runWithScene(scene);
     
     return true;
 }

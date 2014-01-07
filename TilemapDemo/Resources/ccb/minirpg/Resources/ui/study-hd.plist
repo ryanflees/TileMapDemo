@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>anniu-mess.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{635, 379}, {176, 46}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {175, 44}}</string>
+			<key>sourceSize</key>
+			<string>{176, 46}</string>
+		</dict>
+		<key>jiantou.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 292}, {76, 86}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{2, 1}, {72, 85}}</string>
+			<key>sourceSize</key>
+			<string>{76, 86}</string>
+		</dict>
+		<key>kuang.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{409, 1}, {564, 132}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {564, 131}}</string>
+			<key>sourceSize</key>
+			<string>{564, 132}</string>
+		</dict>
+		<key>lidu-mess.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{812, 379}, {176, 46}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {175, 44}}</string>
+			<key>sourceSize</key>
+			<string>{176, 46}</string>
+		</dict>
+		<key>pass.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 440}, {44, 40}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{1, 1}, {43, 39}}</string>
+			<key>sourceSize</key>
+			<string>{44, 40}</string>
+		</dict>
+		<key>shouzhi-mess.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 379}, {500, 60}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{2, 2}, {497, 57}}</string>
+			<key>sourceSize</key>
+			<string>{500, 60}</string>
+		</dict>
+		<key>shouzhi.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {222, 290}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {221, 289}}</string>
+			<key>sourceSize</key>
+			<string>{222, 290}</string>
+		</dict>
+		<key>skip.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{502, 379}, {132, 54}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {131, 54}}</string>
+			<key>sourceSize</key>
+			<string>{132, 54}</string>
+		</dict>
+		<key>tili-mess.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{317, 292}, {214, 78}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{1, 0}, {212, 77}}</string>
+			<key>sourceSize</key>
+			<string>{214, 78}</string>
+		</dict>
+		<key>touxiang.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{224, 1}, {184, 154}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{0, 2}, {181, 152}}</string>
+			<key>sourceSize</key>
+			<string>{184, 154}</string>
+		</dict>
+		<key>yaogan-mess.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{78, 292}, {238, 80}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>sourceColorRect</key>
+			<string>{{2, 1}, {233, 77}}</string>
+			<key>sourceSize</key>
+			<string>{238, 80}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>1</integer>
+		<key>size</key>
+		<string>{1024, 512}</string>
+	</dict>
+</dict>
+</plist>

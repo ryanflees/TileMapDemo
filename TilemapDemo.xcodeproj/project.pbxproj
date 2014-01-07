@@ -329,6 +329,11 @@
 		6BBAE91D1871BC0A00A3B6D2 /* RCActor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE91B1871BC0A00A3B6D2 /* RCActor.cpp */; };
 		6BBAE9201871BCC900A3B6D2 /* RCTileWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE91E1871BCC900A3B6D2 /* RCTileWorld.cpp */; };
 		6BBAE92A1876FD1A00A3B6D2 /* RCButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9281876FD1A00A3B6D2 /* RCButton.cpp */; };
+		6BBAFA93187C390300A3B6D2 /* ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAFA90187C390300A3B6D2 /* ccbi */; };
+		6BBAFA94187C390300A3B6D2 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAFA91187C390300A3B6D2 /* fileLookup.plist */; };
+		6BBAFA95187C390300A3B6D2 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAFA92187C390300A3B6D2 /* ui */; };
+		6BBAFA99187C392E00A3B6D2 /* RCMainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAFA97187C392E00A3B6D2 /* RCMainMenu.cpp */; };
+		6BBAFA9B187C3AE100A3B6D2 /* MainMenu.lua in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAFA9A187C3AE100A3B6D2 /* MainMenu.lua */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1007,6 +1012,12 @@
 		6BBAE91F1871BCC900A3B6D2 /* RCTileWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCTileWorld.h; path = Classes/RCTileWorld.h; sourceTree = "<group>"; };
 		6BBAE9281876FD1A00A3B6D2 /* RCButton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCButton.cpp; path = Classes/RCButton.cpp; sourceTree = "<group>"; };
 		6BBAE9291876FD1A00A3B6D2 /* RCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCButton.h; path = Classes/RCButton.h; sourceTree = "<group>"; };
+		6BBAFA90187C390300A3B6D2 /* ccbi */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ccbi; path = "Resources/ccb/minirpg/Published-iOS/ccbi"; sourceTree = "<group>"; };
+		6BBAFA91187C390300A3B6D2 /* fileLookup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = fileLookup.plist; path = "Resources/ccb/minirpg/Published-iOS/fileLookup.plist"; sourceTree = "<group>"; };
+		6BBAFA92187C390300A3B6D2 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ui; path = "Resources/ccb/minirpg/Published-iOS/ui"; sourceTree = "<group>"; };
+		6BBAFA97187C392E00A3B6D2 /* RCMainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCMainMenu.cpp; path = Classes/RCMainMenu.cpp; sourceTree = "<group>"; };
+		6BBAFA98187C392E00A3B6D2 /* RCMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCMainMenu.h; path = Classes/RCMainMenu.h; sourceTree = "<group>"; };
+		6BBAFA9A187C3AE100A3B6D2 /* MainMenu.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MainMenu.lua; path = lua/MainMenu.lua; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2300,6 +2311,8 @@
 		04A6BB2E187178DE0094B6F1 /* MainMenu */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAFA97187C392E00A3B6D2 /* RCMainMenu.cpp */,
+				6BBAFA98187C392E00A3B6D2 /* RCMainMenu.h */,
 			);
 			name = MainMenu;
 			sourceTree = "<group>";
@@ -2367,6 +2380,7 @@
 			isa = PBXGroup;
 			children = (
 				04C1D017187AE10D002BEFA2 /* GameScene.lua */,
+				6BBAFA9A187C3AE100A3B6D2 /* MainMenu.lua */,
 			);
 			name = Lua;
 			sourceTree = "<group>";
@@ -2418,6 +2432,9 @@
 		6B3849FF1866DA2000830047 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6BBAFA90187C390300A3B6D2 /* ccbi */,
+				6BBAFA91187C390300A3B6D2 /* fileLookup.plist */,
+				6BBAFA92187C390300A3B6D2 /* ui */,
 				6BBAE9021871BB0000A3B6D2 /* controller */,
 				04A6BB3418717A7D0094B6F1 /* game */,
 				6B384A001866DA2000830047 /* CloseNormal.png */,
@@ -2589,6 +2606,7 @@
 				6B384DDE1866DA2800830047 /* land.png in Resources */,
 				041863D0186BE4F500E01A3D /* CCBReaderLoad.lua in Resources */,
 				041862C6186BE4F500E01A3D /* chipmunk-docs.html in Resources */,
+				6BBAFA94187C390300A3B6D2 /* fileLookup.plist in Resources */,
 				6B384A011866DA2000830047 /* CloseNormal.png in Resources */,
 				6B384DE41866DA2800830047 /* background.mp3 in Resources */,
 				04C1D018187AE10D002BEFA2 /* GameScene.lua in Resources */,
@@ -2601,6 +2619,7 @@
 				6B384A0B1866DA2000830047 /* Icon-Small-50.png in Resources */,
 				6B384A151866DA2000830047 /* iTunesArtwork in Resources */,
 				6B384A0F1866DA2000830047 /* Icon-Small@2x.png in Resources */,
+				6BBAFA93187C390300A3B6D2 /* ccbi in Resources */,
 				6B384A051866DA2000830047 /* Default.png in Resources */,
 				6B384DDC1866DA2800830047 /* hello2.lua in Resources */,
 				6B384DD81866DA2800830047 /* dog.png in Resources */,
@@ -2610,11 +2629,13 @@
 				6B384DE61866DA2800830047 /* effect1.wav in Resources */,
 				6B384DE21866DA2800830047 /* menu2.png in Resources */,
 				6B384A031866DA2000830047 /* CloseSelected.png in Resources */,
+				6BBAFA95187C390300A3B6D2 /* ui in Resources */,
 				6B384DE01866DA2800830047 /* menu1.png in Resources */,
 				6B384A131866DA2000830047 /* Icon@2x.png in Resources */,
 				6B384DD41866DA2800830047 /* farm.jpg in Resources */,
 				04A6BB3518717A7D0094B6F1 /* game in Resources */,
 				041862C7186BE4F500E01A3D /* LICENSE.txt in Resources */,
+				6BBAFA9B187C3AE100A3B6D2 /* MainMenu.lua in Resources */,
 				6B384DDA1866DA2800830047 /* hello.lua in Resources */,
 				041863CF186BE4F500E01A3D /* AudioEngine.lua in Resources */,
 			);
@@ -2681,6 +2702,7 @@
 				041863B5186BE4F500E01A3D /* BoneData.cpp in Sources */,
 				0418632F186BE4F500E01A3D /* CCFileUtils.cpp in Sources */,
 				04186300186BE4F500E01A3D /* CCGeometry.cpp in Sources */,
+				6BBAFA99187C392E00A3B6D2 /* RCMainMenu.cpp in Sources */,
 				041862D6186BE4F500E01A3D /* cpArbiter.c in Sources */,
 				04186386186BE4F500E01A3D /* CCNode+CCBRelativePositioning.cpp in Sources */,
 				0418639D186BE4F500E01A3D /* CCEditBox.cpp in Sources */,
