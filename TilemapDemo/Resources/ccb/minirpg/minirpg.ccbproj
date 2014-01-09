@@ -21,13 +21,13 @@
 	<key>generatedSpriteSheets</key>
 	<dict/>
 	<key>javascriptBased</key>
-	<false/>
+	<true/>
 	<key>javascriptMainCCB</key>
 	<string></string>
 	<key>needRepublish</key>
 	<false/>
 	<key>onlyPublishCCBs</key>
-	<false/>
+	<true/>
 	<key>publishDirectory</key>
 	<string>Published-iOS</string>
 	<key>publishDirectoryAndroid</key>
@@ -73,6 +73,10 @@
 		<dict>
 			<key>path</key>
 			<string>Resources</string>
+		</dict>
+		<dict>
+			<key>path</key>
+			<string>../../ui</string>
 		</dict>
 	</array>
 	<key>versionStr</key>

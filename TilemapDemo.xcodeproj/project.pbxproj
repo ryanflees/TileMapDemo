@@ -318,6 +318,10 @@
 		6B384DE21866DA2800830047 /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B384DE11866DA2800830047 /* menu2.png */; };
 		6B384DE41866DA2800830047 /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B384DE31866DA2800830047 /* background.mp3 */; };
 		6B384DE61866DA2800830047 /* effect1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B384DE51866DA2800830047 /* effect1.wav */; };
+		6B412C63187ECA12006F6032 /* main.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B412C5F187ECA12006F6032 /* main.plist */; };
+		6B412C64187ECA12006F6032 /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B412C60187ECA12006F6032 /* main.png */; };
+		6B412C65187ECA12006F6032 /* stage2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B412C61187ECA12006F6032 /* stage2.plist */; };
+		6B412C66187ECA12006F6032 /* stage2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B412C62187ECA12006F6032 /* stage2.png */; };
 		6BBAE9051871BB0000A3B6D2 /* dpad_buttons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAE9031871BB0000A3B6D2 /* dpad_buttons.plist */; };
 		6BBAE9061871BB0000A3B6D2 /* dpad_buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAE9041871BB0000A3B6D2 /* dpad_buttons.png */; };
 		6BBAE90A1871BB4B00A3B6D2 /* RCGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9081871BB4B00A3B6D2 /* RCGameScene.cpp */; };
@@ -331,7 +335,6 @@
 		6BBAE92A1876FD1A00A3B6D2 /* RCButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAE9281876FD1A00A3B6D2 /* RCButton.cpp */; };
 		6BBAFA93187C390300A3B6D2 /* ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAFA90187C390300A3B6D2 /* ccbi */; };
 		6BBAFA94187C390300A3B6D2 /* fileLookup.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAFA91187C390300A3B6D2 /* fileLookup.plist */; };
-		6BBAFA95187C390300A3B6D2 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAFA92187C390300A3B6D2 /* ui */; };
 		6BBAFA99187C392E00A3B6D2 /* RCMainMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BBAFA97187C392E00A3B6D2 /* RCMainMenu.cpp */; };
 		6BBAFA9B187C3AE100A3B6D2 /* MainMenu.lua in Resources */ = {isa = PBXBuildFile; fileRef = 6BBAFA9A187C3AE100A3B6D2 /* MainMenu.lua */; };
 /* End PBXBuildFile section */
@@ -991,6 +994,10 @@
 		6B384DE11866DA2800830047 /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu2.png; path = Resources/menu2.png; sourceTree = "<group>"; };
 		6B384DE31866DA2800830047 /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = Resources/background.mp3; sourceTree = "<group>"; };
 		6B384DE51866DA2800830047 /* effect1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = effect1.wav; path = Resources/effect1.wav; sourceTree = "<group>"; };
+		6B412C5F187ECA12006F6032 /* main.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = main.plist; path = Resources/ui/main.plist; sourceTree = "<group>"; };
+		6B412C60187ECA12006F6032 /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main.png; path = Resources/ui/main.png; sourceTree = "<group>"; };
+		6B412C61187ECA12006F6032 /* stage2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = stage2.plist; path = Resources/ui/stage2.plist; sourceTree = "<group>"; };
+		6B412C62187ECA12006F6032 /* stage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stage2.png; path = Resources/ui/stage2.png; sourceTree = "<group>"; };
 		6BBAE9031871BB0000A3B6D2 /* dpad_buttons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dpad_buttons.plist; sourceTree = "<group>"; };
 		6BBAE9041871BB0000A3B6D2 /* dpad_buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad_buttons.png; sourceTree = "<group>"; };
 		6BBAE9081871BB4B00A3B6D2 /* RCGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCGameScene.cpp; path = Classes/RCGameScene.cpp; sourceTree = "<group>"; };
@@ -1014,7 +1021,6 @@
 		6BBAE9291876FD1A00A3B6D2 /* RCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCButton.h; path = Classes/RCButton.h; sourceTree = "<group>"; };
 		6BBAFA90187C390300A3B6D2 /* ccbi */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ccbi; path = "Resources/ccb/minirpg/Published-iOS/ccbi"; sourceTree = "<group>"; };
 		6BBAFA91187C390300A3B6D2 /* fileLookup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = fileLookup.plist; path = "Resources/ccb/minirpg/Published-iOS/fileLookup.plist"; sourceTree = "<group>"; };
-		6BBAFA92187C390300A3B6D2 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ui; path = "Resources/ccb/minirpg/Published-iOS/ui"; sourceTree = "<group>"; };
 		6BBAFA97187C392E00A3B6D2 /* RCMainMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RCMainMenu.cpp; path = Classes/RCMainMenu.cpp; sourceTree = "<group>"; };
 		6BBAFA98187C392E00A3B6D2 /* RCMainMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCMainMenu.h; path = Classes/RCMainMenu.h; sourceTree = "<group>"; };
 		6BBAFA9A187C3AE100A3B6D2 /* MainMenu.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = MainMenu.lua; path = lua/MainMenu.lua; sourceTree = "<group>"; };
@@ -2432,9 +2438,12 @@
 		6B3849FF1866DA2000830047 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6B412C5F187ECA12006F6032 /* main.plist */,
+				6B412C60187ECA12006F6032 /* main.png */,
+				6B412C61187ECA12006F6032 /* stage2.plist */,
+				6B412C62187ECA12006F6032 /* stage2.png */,
 				6BBAFA90187C390300A3B6D2 /* ccbi */,
 				6BBAFA91187C390300A3B6D2 /* fileLookup.plist */,
-				6BBAFA92187C390300A3B6D2 /* ui */,
 				6BBAE9021871BB0000A3B6D2 /* controller */,
 				04A6BB3418717A7D0094B6F1 /* game */,
 				6B384A001866DA2000830047 /* CloseNormal.png */,
@@ -2601,9 +2610,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B412C63187ECA12006F6032 /* main.plist in Resources */,
 				6B384A111866DA2000830047 /* Icon.png in Resources */,
 				0418630D186BE4F500E01A3D /* CMakeLists.txt in Resources */,
 				6B384DDE1866DA2800830047 /* land.png in Resources */,
+				6B412C65187ECA12006F6032 /* stage2.plist in Resources */,
 				041863D0186BE4F500E01A3D /* CCBReaderLoad.lua in Resources */,
 				041862C6186BE4F500E01A3D /* chipmunk-docs.html in Resources */,
 				6BBAFA94187C390300A3B6D2 /* fileLookup.plist in Resources */,
@@ -2612,11 +2623,13 @@
 				04C1D018187AE10D002BEFA2 /* GameScene.lua in Resources */,
 				0418630C186BE4F500E01A3D /* ChangeLog in Resources */,
 				6B384A0D1866DA2000830047 /* Icon-Small.png in Resources */,
+				6B412C64187ECA12006F6032 /* main.png in Resources */,
 				6B384A091866DA2000830047 /* Icon-72.png in Resources */,
 				6BBAE9061871BB0000A3B6D2 /* dpad_buttons.png in Resources */,
 				6B384A071866DA2000830047 /* HelloWorld.png in Resources */,
 				6B384DD61866DA2800830047 /* crop.png in Resources */,
 				6B384A0B1866DA2000830047 /* Icon-Small-50.png in Resources */,
+				6B412C66187ECA12006F6032 /* stage2.png in Resources */,
 				6B384A151866DA2000830047 /* iTunesArtwork in Resources */,
 				6B384A0F1866DA2000830047 /* Icon-Small@2x.png in Resources */,
 				6BBAFA93187C390300A3B6D2 /* ccbi in Resources */,
@@ -2629,7 +2642,6 @@
 				6B384DE61866DA2800830047 /* effect1.wav in Resources */,
 				6B384DE21866DA2800830047 /* menu2.png in Resources */,
 				6B384A031866DA2000830047 /* CloseSelected.png in Resources */,
-				6BBAFA95187C390300A3B6D2 /* ui in Resources */,
 				6B384DE01866DA2800830047 /* menu1.png in Resources */,
 				6B384A131866DA2000830047 /* Icon@2x.png in Resources */,
 				6B384DD41866DA2800830047 /* farm.jpg in Resources */,

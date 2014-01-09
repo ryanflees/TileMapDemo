@@ -9,25 +9,42 @@
 #include "RCMainMenu.h"
 #include "CCNodeLoaderLibrary.h"
 
-USING_NS_CC;
-USING_NS_CC_EXT;
-
-bool RCMainMenu::init()
+SEL_MenuHandler RCMainMenu::onResolveCCBCCMenuItemSelector(cocos2d::CCObject * pTarget, const char * pSelectorName)
 {
-    if (!CCLayer::init()) {
-        return false;
-    }
-    
-    
-    CCNodeLoaderLibrary *loaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
-    CCBReader *ccbReader = new CCBReader(loaderLibrary);
-    CCNode *node = ccbReader->readNodeGraphFromFile("ccbi/main_menu.ccbi");
-    addChild(node);
+    return NULL;
+}
 
-    
-    return true;
+SEL_CCControlHandler RCMainMenu::onResolveCCBCCControlSelector(cocos2d::CCObject * pTarget, const char * pSelectorName)
+{
+    return false;
+}
+
+bool RCMainMenu::onAssignCCBMemberVariable(CCObject * pTarget, const char * pMemberVariableName, CCNode * pNode)
+{
+    return false;
+}
+
+bool RCMainMenu::onAssignCCBCustomProperty(CCObject* pTarget, const char* pMemberVariableName, CCBValue* pCCBValue)
+{
+    return false;
+}
+
+void RCMainMenu::onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader)
+{
 
 }
 
+//bool RCMainMenu::init()
+//{
+//    if (!CCLayer::init()) {
+//        return false;
+//    }
+//    CCNodeLoaderLibrary *loaderLibrary = CCNodeLoaderLibrary::newDefaultCCNodeLoaderLibrary();
+//    CCBReader *ccbReader = new CCBReader(loaderLibrary);
+//    CCNode *node = ccbReader->readNodeGraphFromFile("ccbi/main_menu.ccbi");
+//    addChild(node);
+//    return true;
+//}
+//
 
 

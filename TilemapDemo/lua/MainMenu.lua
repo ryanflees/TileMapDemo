@@ -22,7 +22,13 @@ local function main()
 
     MainMenu = MainMenu or {}
     ccb["MainMenu"] = MainMenu
-
+    
+    MainMenu.playButtonClicked = function()
+    	cclog("clicked button")
+        local scene = RCGameScene:scene()
+        CCDirector:sharedDirector():replaceScene(scene)
+    end
+    
     local function CreateMainMenuLayer()
        local proxy = CCBProxy:create()
        local node = CCBReaderLoad("ccbi/main_menu.ccbi", proxy, true, "MainMenu"); 
