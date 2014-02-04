@@ -227,8 +227,26 @@
   </object>
   <object name="NPCSpawn" type="spawn" x="361" y="738" width="27" height="28">
    <properties>
-    <property name="actor" value="hero2"/>
     <property name="npc" value="1"/>
+    <property name="template_id" value="1"/>
+   </properties>
+  </object>
+  <object name="NPCSpawn" type="spawn" x="232" y="891" width="27" height="28">
+   <properties>
+    <property name="npc" value="1"/>
+    <property name="template_id" value="2"/>
+   </properties>
+  </object>
+  <object name="NPCSpawn" type="spawn" x="487" y="820" width="27" height="28">
+   <properties>
+    <property name="npc" value="1"/>
+    <property name="template_id" value="1"/>
+   </properties>
+  </object>
+  <object name="NPCSpawn" type="spawn" x="472" y="942" width="27" height="28">
+   <properties>
+    <property name="npc" value="1"/>
+    <property name="template_id" value="2"/>
    </properties>
   </object>
  </objectgroup>

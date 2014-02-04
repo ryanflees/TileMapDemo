@@ -24,6 +24,11 @@ public:
     
     virtual bool init();
     CREATE_FUNC(RCGameScene);
+    
+    virtual void onEnter();
+    virtual void onExit();
+    
+    void addTileMap(const char* tileMap);
 private:
     RCControllerLayer *m_controllerLayer;
     RCTileWorld *m_tileWorld;

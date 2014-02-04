@@ -1,0 +1,46 @@
+package MessageCode;
+
+//@@ 0x00100
+message ProtoLoginReq {
+  required int32 authID = 1;
+}
+
+//@@ 0x00101
+message ProtoLoginRes {
+   required int32 mapID = 1;
+}
+
+//@@ 0x00200
+message ProtoEnterMapReq {
+  
+}
+
+//@@ 0x00201
+message ProtoEnterMapRes {
+   required int32 positinX = 1;
+   required int32 positinY = 2;
+   repeated ProtoNPCStatus npcList = 3;
+}
+
+message ProtoNPCStatus {
+    enum NPCDirection {
+    P_LEFT = 1;
+    P_RIGHT = 2;
+    P_DOWN = 3;
+    P_UP = 4;
+   }
+   required int32 npcID = 1;
+   required int32 positinX = 2;
+   required int32 positinY = 3; 
+   required NPCDirection direction = 4;
+}
+
+//@@ 0x00202
+message ProtoPlayerMoveReq {
+  
+}
+
+//@@ 0x00203
+message ProtoPlayerMoveRes {
+  
+}

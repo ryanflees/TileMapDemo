@@ -4,6 +4,8 @@
 #include "script_support/CCScriptSupport.h"
 #include "CCLuaEngine.h"
 #include "RCGameEntry.h"
+#include "RCMessageCenter.h"
+#include "RCDataCenter.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -23,6 +25,9 @@ AppDelegate::~AppDelegate()
 
 bool AppDelegate::applicationDidFinishLaunching()
 {
+    RCMessageCenter::sharedMessageCenter();
+    RCDataCenter::sharedDataCenter();
+    
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());

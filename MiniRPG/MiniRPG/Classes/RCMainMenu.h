@@ -12,6 +12,7 @@
 #include <iostream>
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "RCMessageCenter.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -20,10 +21,15 @@ class RCMainMenu : public cocos2d::CCLayer
 ,public CCBSelectorResolver
 ,public CCBMemberVariableAssigner
 ,public CCNodeLoaderListener
+,public RCMessageObserver
 {
 public:
     RCMainMenu();
     ~RCMainMenu();
+    
+    virtual void onEnter();
+    virtual void onExit();
+    virtual void update(float dt);
     
     CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(RCMainMenu, create);
 
@@ -36,6 +42,8 @@ public:
     virtual bool onAssignCCBCustomProperty(CCObject* pTarget, const char* pMemberVariableName, CCBValue* pCCBValue);
     
     virtual void onNodeLoaded(CCNode * pNode, CCNodeLoader * pNodeLoader);
+    
+    virtual void onReceiveMessage(int messageCode, void *data, int length);
 private:
     void onButtonClicked(CCNode* node);
 };

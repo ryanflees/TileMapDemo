@@ -22,6 +22,7 @@ public:
     ~RCGameEntry();
     
     void showMainMenu();
+    void showGameScene(const char* map);
     void readAllLevelData();
     void loadLevel(const char* levelFile);
 };

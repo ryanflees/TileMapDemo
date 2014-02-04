@@ -29,7 +29,13 @@ bool RCGameScene::init()
     }
     
     RCActorTemplateCache::sharedActorTemplateCache()->addActorByFile("game/DSMaterials/Graphics/Characters/hero.plist");
+    RCActorTemplateCache::sharedActorTemplateCache()->addActorByFile("game/DSMaterials/Graphics/Characters/bunny_girl.plist");
     
+    return true;
+}
+
+void RCGameScene::addTileMap(const char* tileMap)
+{
     m_tileWorld = RCTileWorld::createWithTmxFile("game/tilemap/game_world.tmx");
     addChild(m_tileWorld);
     m_tileWorld->setAnchorPoint(CCPointZero);
@@ -40,15 +46,20 @@ bool RCGameScene::init()
     m_tileWorld->addPlayer(actorTemplate);
     RCActor *player = m_tileWorld->getPlayer();
     player->setSpeed(100);
-    //player->setPosition(ccp(400, 200));
-    //m_tileWorld->setPosition(ccp(-200,-200));
     
     m_controllerLayer = RCControllerLayer::create();
     addChild(m_controllerLayer);
     m_tileWorld->bindControllerLayer(m_controllerLayer);
-    
-    return true;
 }
 
+void RCGameScene::onEnter()
+{
+    CCLayer::onEnter();
+}
+
+void RCGameScene::onExit()
+{
+    CCLayer::onExit();
+}
 
 

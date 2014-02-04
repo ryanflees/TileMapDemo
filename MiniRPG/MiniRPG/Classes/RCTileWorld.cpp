@@ -10,8 +10,11 @@
 #include "RCActor.h"
 #include "RCActorTemplate.h"
 #include "RCActorTemplateCache.h"
+#include "RCDataCenter.h"
 
 USING_NS_CC;
+
+#define ACTOR_TEMPLATE_ID "template_id"
 
 RCTileWorld::RCTileWorld():m_player(NULL)
 {
@@ -152,9 +155,11 @@ void RCTileWorld::generateNPCActors()
         if (strcmp(type->getCString(), "spawn") == 0) {
             const CCString *isNPCStr = dict->valueForKey("npc");
             if (isNPCStr->intValue()) {
-                const CCString *npcActorName = dict->valueForKey("actor");
+                int actorID = dict->valueForKey(ACTOR_TEMPLATE_ID)->intValue();
+                RCActorTemplateData* actorTemplateData = RCDataCenter::sharedDataCenter()->getActorTemplateDataByID(actorID);
+              //  const CCString *npcActorName = dict->valueForKey("actor");
                 CCPoint tilePos = getTilePositionByDict(dict);
-                addNPC(npcActorName->getCString(), tilePos);
+                addNPC(actorTemplateData->name.c_str(), tilePos);
             }
         }
     }

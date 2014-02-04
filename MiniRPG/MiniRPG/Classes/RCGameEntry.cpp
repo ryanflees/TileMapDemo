@@ -8,6 +8,9 @@
 
 #include "RCGameEntry.h"
 #include "RCMainMenu.h"
+#include "RCDataCenter.h"
+#include "RCGameScene.h"
+#include "RCLoadingScene.h"
 
 using namespace std;
 USING_NS_CC;
@@ -57,6 +60,19 @@ void RCGameEntry::readAllLevelData()
 void RCGameEntry::loadLevel(const char* levelFile)
 {
 
+}
+
+void RCGameEntry::showGameScene(const char* map)
+{
+    CCScene* scene = CCScene::create();
+    RCLoadingScene* node = RCLoadingScene::create();
+    node->setLoadingSceneTag(kLoadingGameScene);
+    if (map) {
+        node->setTileMapName(map);
+    }
+    scene->addChild(node);
+    CCTransitionScene *transScene = CCTransitionCrossFade::create(0.5f, scene);
+    CCDirector::sharedDirector()->replaceScene(transScene);
 }
 
 
